@@ -1,0 +1,730 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Nosifer&family=Poppins:wght@300&family=Roboto:wght@300&display=swap");
+
+* {
+    font-family: poppins;
+}
+
+.logorental {
+    width: 300px;
+    height: 100px;
+}
+.navname {
+    width: 500px;
+    hight: auto;
+    gap: 10px;
+}
+.navname a {
+    gap: 20px;
+}
+.hero {
+    width: 100%;
+    height: auto;
+    background: url("/images/lamm.png");
+    background-size: cover;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+}
+
+.pickup {
+    width: 350px;
+    height: 100px;
+}
+.pickup input {
+    width: 100%;
+    height: 70px;
+}
+.date {
+    width: 200px;
+    height: 100px;
+}
+.time {
+    width: 200px;
+    height: 100px;
+}
+.searchsection {
+    width: 70%;
+    height: auto;
+    padding: 10px;
+}
+.howitwork {
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.howitwork .latest {
+    width: 300px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+.howitwork .latest .minidiv {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 45%;
+    bottom: -10px;
+    transform: rotate(45deg);
+}
+.howitwork h1 {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+.howitwork .jesus {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+/* ....................RENTAL SERVICE................. */
+.rentalservice {
+    width: 100%;
+    height: 550px;
+    background-color: #f2f5ff;
+    position: relative;
+    padding: 20px;
+}
+.rentalservice .minirentalservice {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.rentalservice .minirentalservice .mini {
+    width: 600px;
+    height: 350px;
+}
+.rentalservice .minirentalservice .text {
+    height: auto;
+}
+
+.rentalservice .minirentalservice .img img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 10px -10px #5a77fa;
+}
+/* ........................team............................... */
+.team {
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.team span {
+    color: red;
+}
+.team h1 {
+    padding-top: 30px;
+}
+.team .miniteam {
+    width: 85%;
+    height: auto;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.team .miniteam .pic1 {
+    width: 350px;
+    height: 350px;
+}
+.team .miniteam .pic1 img {
+    width: 350px;
+    height: 350px;
+}
+/* .....................DRIVER.................................. */
+.driver {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #f2f5ff;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.drivertext {
+    width: 400px;
+    height: 300px;
+}
+.car {
+    width: 600px;
+    height: 300px;
+}
+.car img {
+    width: 550px;
+    height: 300px;
+}
+
+.carasoul {
+    wisth: 100%;
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.carasoul .imag {
+    width: 100px;
+    height: 100px;
+}
+/* ............................VEHICLE DESCRIPTION PAGE............... */
+.description span {
+    color: red;
+}
+
+.mainsection {
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+    padding: 20px;
+}
+.cardetail {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.cardetail button {
+    position: relative;
+    z-index: 1;
+    background-color: red;
+    border-radius: 50px;
+    padding: 10px;
+    color: white;
+}
+.cardetail .triangle {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    left: 40%;
+    z-index: -1;
+    background-color: red;
+    transform: rotate(130deg);
+    bottom: -5px;
+}
+.mainsection .desc {
+    width: auto;
+    min-width: 320px;
+    height: auto;
+    margin-left: 20px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
+}
+.mainsection .desc .desc1 {
+    width: auto;
+    min-width: 320px;
+    margin: 20px auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* gap: 30px; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+.mainsection .desc .desc1 .imgsrc {
+    width: 400px;
+    height: 250px;
+    background-size: cover;
+}
+.mainsection .desc .desc1 .imgsrc img {
+    width: 400px;
+    height: 250px;
+    background-size: cover;
+}
+.mainsection .desc .desc1 .imgdesc {
+    width: 400px;
+    height: 250px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.mainsection .desc .desc1 .imgdesc button {
+    margin-top: 10px;
+}
+.mainsection .desc .desc1 .imgdesc h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: start;
+    padding: 0;
+}
+.mainsection .desc .desc1 .imgdesc h3 {
+    color: grey;
+}
+
+.mainsection .desc .desc1 .imgdesc .icons {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mainsection .desc .desc1 .imgdesc .icons .i {
+    width: 160px;
+    height: 40px;
+    color: grey;
+    font-size: 15px;
+    padding-top: 10px;
+}
+.mainsection .latest {
+    width: 450px;
+    height: 600px;
+    margin-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.mainsection .latest .minilatest {
+    width: 90%;
+    height: 100px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(232, 232, 232);
+}
+.mainsection .latest .minilatest .imgsec img {
+    width: 150px;
+    height: 98px;
+}
+.mainsection .latest .minilatest .textsection {
+    width: 150px;
+    height: 98px;
+}
+.mainsection .latest .minilatest .textsection h1 {
+    text-align: start;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* ............................ABOUT US PAGE........................... */
+.about {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 30px;
+    background-color: #f2f5ff;
+}
+.about .text {
+    width: 600px;
+    height: auto;
+    padding: 5px;
+}
+.about .photo {
+    width: 500px;
+    height: 400px;
+}
+span {
+    color: red;
+}
+.about .photo img {
+    width: 500px;
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ..................CARD ABOUT SECTION................... */
+@import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,700);
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: poppins;
+    color: #333;
+}
+.carts {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+}
+.cart {
+    position: relative;
+    width: 315px; /* Remove for full width */
+    height: 450px; /* Remove for full width */
+    margin: 30px auto;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+}
+.cart-header {
+    position: relative;
+    height: 220px;
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
+}
+.cart-header:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgb(5, 85, 134),
+        rgba(181, 181, 181, 0.1)
+    );
+}
+
+.cart-header-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    width: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+    border: none;
+    overflow: hidden;
+}
+
+svg .polygon {
+    fill: #fff;
+}
+.cart-header-slanted-edge {
+    position: absolute;
+    bottom: -3px;
+    z-index: 1;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+
+.btn-follow {
+    position: absolute;
+    top: -15px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(to left, #2d77c1, #68fac2);
+    border-radius: 100%;
+    box-shadow: 0 10px 15px rgba(110, 221, 235, 0.53);
+}
+
+.btn-follow:after {
+    content: "";
+    position: absolute;
+    background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/add.svg)
+        no-repeat;
+    width: 17px;
+    height: 17px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cart-body {
+    text-align: center;
+    padding-left: 10px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.job-title {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    color: #919191;
+}
+
+.bio {
+    font-size: 14px;
+    color: #7b7b7b;
+    font-weight: 300;
+    margin: 10px auto;
+    line-height: 20px;
+}
+
+.cart-footer {
+    /*position:fixed; /* Full card width/height */
+    position: absolute; /* Fixed card width/height */
+
+    left: 0;
+    width: 100%;
+    bottom: 20px;
+}
+.cart-footer i {
+    padding-top: 5px;
+    font-size: 20px;
+}
+.stat {
+    box-sizing: border-box;
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    border-left: 1px solid #ebebeb;
+}
+.stat .label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #95989a;
+}
+
+.stat .value {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+/* ..........................SERVICE SECTION................. */
+.service {
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    background: url("/images/lamm.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.service .miniservice {
+    width: 90%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.servicecard {
+    width: 350px;
+    height: 250px;
+    background-color: #f7faff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.servicecard .icon {
+    width: 100px;
+    margin: 0 auto;
+    height: 70px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 40px;
+}
+/* ....................................BOOKING PAGE........................ */
+.booking {
+    width: 100%;
+    height: auto;
+}
+.booking .minibooking {
+    width: 70%;
+    margin: 20px auto;
+    height: auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.booking .minibooking .book {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.booking .minibooking .book .img {
+    width: 300px;
+    height: 200px;
+}
+.booking .minibooking .book .img img {
+    width: 300px;
+    height: 200px;
+}
+.booking .minibooking .book .text {
+    width: 300px;
+    height: auto;
+    padding-left: 20px;
+}
+.booking .minibooking .book .confirmed {
+    width: 200px;
+    height: 200px;
+}
+.booking .minibooking .book .confirmed input {
+    width: 100px;
+    height: 45px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+/* ......................................................... */
+
+@media (max-width: 768px) {
+    .rentalservice {
+        width: 100%;
+        height: 750px;
+    }
+    .rentalservice .minirentalservice {
+        height: auto;
+    }
+    .rentalservice .minirentalservice .text {
+        font-size: 14px;
+    }
+    .rentalservice .minirentalservice .text p {
+        font-size: 12px;
+    }
+    .pickup {
+        width: 300px;
+        height: 100px;
+    }
+    .searchsection {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .searchsection button {
+        margin-top: 20px;
+    }
+    .howitwork {
+        padding: 10px;
+    }
+    .howitwork .jesus {
+        padding: 0;
+    }
+    .howitwork .latest {
+        margin-bottom: 30px;
+    }
+    .rentalservice .minirentalservice .img {
+        height: auto;
+    }
+    .rentalservice .minirentalservice .img img {
+        height: 200px;
+        box-shadow: none;
+    }
+    .team .miniteam .pic1 img {
+        width: 350px;
+        height: 270px;
+        padding-top: 10px;
+    }
+    .team .miniteam .pic1 {
+        width: 350px;
+        height: 270px;
+    }
+    .driver {
+        height: auto;
+        text-align: center;
+    }
+    .car img {
+        display: none;
+    }
+    .car {
+        display: none;
+    }
+    .mainsection {
+        flex-wrap: wrap;
+    }
+
+    .mainsection .desc {
+        margin: auto;
+    }
+    .mainsection .desc .desc1 {
+        height: auto;
+    }
+    .cardetail {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .cardetail button {
+        display: none;
+    }
+    .description h1 {
+        width: 100%;
+        font-size: 25px;
+    }
+    .mainsection .desc .desc1 .imgdesc button {
+        height: auto;
+        margin-top: 100px;
+    }
+    .mainsection .desc .desc1 .imgdesc {
+        height: auto;
+        padding-left: 10px;
+    }
+    .mainsection .desc .desc1 .imgdesc .icons {
+        flex-wrap: wrap;
+    }
+    .mainsection .desc .desc1 .imgsrc {
+        width: 400px;
+        height: 200px;
+        background-size: cover;
+    }
+    .mainsection .desc .desc1 .imgsrc img {
+        width: 400px;
+        height: 200px;
+        background-size: cover;
+    }
+    .about {
+        text-align: center;
+        padding: 10px 10px;
+    }
+    .about img {
+        padding-top: 30px;
+    }
+    .booking .minibooking {
+        width: 100%;
+    }
+    .booking .minibooking .book .confirmed {
+        height: auto;
+    }
+    .booking .minibooking .book .confirmed input {
+        margin: 0;
+    }
+    .booking .minibooking .book .text {
+        padding-left: 5px;
+    }
+    .booking .minibooking .book .img {
+        width: 300px;
+        height: 150px;
+    }
+    .booking .minibooking .book .img img {
+        width: 300px;
+        height: 150px;
+    }
+}
