@@ -76,15 +76,15 @@
   
           <ul class="list-none mb-0">
             <li>
-              <a href="#!" class="text-white"><b>></b> Home</a>
+              <a href="{{route('home')}}" class="text-white"><b>></b> Home</a>
             </li>
             <br>
             <li>
-              <a href="#!" class="text-white"><b>></b> About</a>
+              <a href="{{route('about')}}" class="text-white"><b>></b> About</a>
             </li>
             <br>
             <li>
-              <a href="#!" class="text-white"><b>></b> Vehicle</a>
+              <a href="{{route('vehicle')}}" class="text-white"><b>></b> Vehicle</a>
             </li>
             
           </ul>
@@ -95,15 +95,15 @@
   
           <ul class="list-none mb-0">
             <li>
-              <a href="#!" class="text-white"><b>></b> Service</a>
+              <a href="{{route('service')}}" class="text-white"><b>></b> Service</a>
             </li>
             <br>
             <li>
-              <a href="#!" class="text-white"><b>></b> Booking</a>
+              <a href="{{route('booking')}}" class="text-white"><b>></b> Booking</a>
             </li>
             <br>
             <li>
-              <a href="#!" class="text-white"><b>></b> Contact</a>
+              <a href="{{route('contact')}}" class="text-white"><b>></b> Contact</a>
             </li>
             
           </ul>

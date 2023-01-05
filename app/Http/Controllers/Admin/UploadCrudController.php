@@ -39,7 +39,25 @@ class UploadCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
+        CRUD::column('id');
+        CRUD::column('name');
+        CRUD::column('brand');
+        CRUD::column('price_day');
+        CRUD::column('seat');
+        CRUD::column('engine');
+        CRUD::column('model');
+        CRUD::column('description');
+        CRUD::addColumn([
+            'name'      => 'image', // The db column name
+            'label'     => 'Image', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '30px',
+            'width'  => '30px',
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,6 +77,20 @@ class UploadCrudController extends CrudController
         CRUD::setValidation(UploadRequest::class);
 
         
+        CRUD::field('name');
+        CRUD::field('brand');
+        CRUD::field('price_day');
+        CRUD::field('seat');
+        CRUD::field('engine');
+        CRUD::field('model');
+        CRUD::field('description');
+        CRUD::addField([   // Upload
+            'name'      => 'image',
+            'label'     => 'Image',
+            'type'      => 'upload',
+            'upload'    => true,
+        ]);
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -15,7 +15,7 @@ class Upload extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'uploads';
+    protected $table = 'upload';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
