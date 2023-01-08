@@ -26,9 +26,9 @@ class DriverCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Driver::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/driver');
-        CRUD::setEntityNameStrings('driver', 'drivers');
+        $this->crud->setModel(\App\Models\Driver::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/driver');
+        $this->crud->setEntityNameStrings('driver', 'drivers');
     }
 
     /**
@@ -39,14 +39,36 @@ class DriverCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
-        CRUD::column('fullname');
-        CRUD::column('contact');
-        CRUD::column('email');
-        CRUD::column('password');
-        CRUD::column('licence');
-        CRUD::column('bluebook');
-        CRUD:: addColumn([
+        $this->crud->column('id');
+        $this->crud->column('fullname');
+        $this->crud->column('contact');
+        $this->crud->column('email');
+        $this->crud->column('password');
+        $this->crud->addColumn([
+            'name'      => 'licence', // The db column name
+            'label'     => 'Licence', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '30px',
+            'width'  => '30px',
+        ]);
+
+        $this->crud->addColumn([
+            'name'      => 'bluebook', // The db column name
+            'label'     => 'Bluebook', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '30px',
+            'width'  => '30px',
+        ]);
+
+        $this->crud->addColumn([
             'name'      => 'image', // The db column name
             'label'     => 'Image', // Table column heading
             'type'      => 'image',
@@ -69,6 +91,50 @@ class DriverCrudController extends CrudController
          */
     }
 
+    public function setupShowOperation()
+    {
+        $this->setupListOperation();
+
+        $this->crud->removeColumn('image');
+        $this->crud->removeColumn('licence');
+        $this->crud->removeColumn('bluebook');
+        $this->crud->addColumn([
+            'name'      => 'image', // The db column name
+            'label'     => 'Image', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '100px',
+            'width'  => '100px',
+        ]);
+
+        $this->crud->addColumn([
+            'name'      => 'licence', // The db column name
+            'label'     => 'Licence', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '100px',
+            'width'  => '100px',
+        ]);
+
+        $this->crud->addColumn([
+            'name'      => 'bluebook', // The db column name
+            'label'     => 'Bluebook', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '100px',
+            'width'  => '100px',
+        ]);
+    }
+
     /**
      * Define what happens when the Create operation is loaded.
      * 
@@ -77,25 +143,25 @@ class DriverCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(DriverRequest::class);
-        CRUD::field('fullname');
-        CRUD::field('contact');
-        CRUD::field('email');
-        CRUD::field('password');
-        CRUD:: addField([   // Upload
+        $this->crud->setValidation(DriverRequest::class); 
+        $this->crud->field('fullname');
+        $this->crud->field('contact');
+        $this->crud->field('email');
+        $this->crud->field('password');
+        $this->crud->addField([   // Upload
             'name'      => 'image',
             'label'     => 'Image',
             'type'      => 'upload',
             'upload'    => true,
         ]);
-        CRUD:: addField([   // Upload
-            'name'      => 'Licence',
+        $this->crud-> addField([   // Upload
+            'name'      => 'licence',
             'label'     => 'Licence',
             'type'      => 'upload',
             'upload'    => true,
         ]);
-        CRUD:: addField([   // Upload
-            'name'      => 'Bluebook',
+        $this->crud-> addField([   // Upload
+            'name'      => 'bluebook',
             'label'     => 'Bluebook',
             'type'      => 'upload',
             'upload'    => true,

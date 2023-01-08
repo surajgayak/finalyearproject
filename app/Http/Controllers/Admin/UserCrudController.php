@@ -39,10 +39,10 @@ class UserCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
-        CRUD::column('name');
-        CRUD::column('email');
-        CRUD::column('password');
+        $this->crud->column('id');
+        $this->crud->column('name');
+        $this->crud->column('email');
+        $this->crud->column('password');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,11 +59,11 @@ class UserCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(UserRequest::class);
+        $this->crud->setValidation(UserRequest::class);
 
-        CRUD::field('name');
-        CRUD::field('email');
-        CRUD::field('password');
+        $this->crud->field('name');
+        $this->crud->field('email');
+        $this->crud->field('password');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

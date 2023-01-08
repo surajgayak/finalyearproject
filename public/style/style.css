@@ -546,17 +546,15 @@ svg .polygon {
     height: auto;
 }
 .booking .minibooking {
-    width: 70%;
+    width: 100%;
     margin: 20px auto;
     height: auto;
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-        rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .booking .minibooking .book {
-    width: 95%;
+    width: 70%;
     height: auto;
     padding: 20px;
     margin: 0 auto;
@@ -566,6 +564,9 @@ svg .polygon {
     background-color: white;
     align-items: center;
     flex-wrap: wrap;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px;
+    /* rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 .booking .minibooking .book .img {
     width: 300px;

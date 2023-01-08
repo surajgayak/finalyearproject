@@ -15,7 +15,7 @@ class Vehicle extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'vehicles';
+    protected $table = 'driversignup';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];

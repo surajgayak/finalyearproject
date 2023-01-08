@@ -52,4 +52,39 @@ class Driver extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "image";
+        $disk = "public";
+        $destination_path = "uploadimages";
+        $fileName = mt_rand(111111,999999) . '.jpg';
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
+
+    public function setBluebookAttribute($value)
+    {
+        $attribute_name = "bluebook";
+        $disk = "public";
+        $destination_path = "bluebook";
+        $fileName = mt_rand(111111,999999) . '.jpg';
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
+
+    public function setLicenceAttribute($value)
+    {
+        $attribute_name = "licence";
+        $disk = "public";
+        $destination_path = "licence";
+        $fileName = mt_rand(111111,999999) . '.jpg';
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
 }

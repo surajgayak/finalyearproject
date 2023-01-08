@@ -26,9 +26,9 @@ class VehicleCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Vehicle::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/vehicle');
-        CRUD::setEntityNameStrings('vehicle', 'vehicles');
+        $this->crud->setModel(\App\Models\Upload::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/vehicle');
+        $this->crud->setEntityNameStrings('vehicle', 'vehicles');
     }
 
     /**
@@ -39,12 +39,30 @@ class VehicleCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
+        $this->crud->column('id');
+        $this->crud->column('name');
+        $this->crud->column('brand');
+        $this->crud->column('price_day');
+        $this->crud->column('seat');
+        $this->crud->column('engine');
+        $this->crud->column('model');
+        $this->crud->column('description');
+        $this->crud->addColumn([
+            'name'      => 'image', // The db column name
+            'label'     => 'Image', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '30px',
+            'width'  => '30px',
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
+         * - $this->crud->column('price')->type('number');
+         * - $this->crud->addColumn(['name' => 'price', 'type' => 'number']); 
          */
     }
 
@@ -56,14 +74,14 @@ class VehicleCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(VehicleRequest::class);
+        $this->crud->setValidation(VehicleRequest::class);
 
         
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         * - $this->crud->field('price')->type('number');
+         * - $this->crud->addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
 

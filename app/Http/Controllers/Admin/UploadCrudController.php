@@ -26,9 +26,9 @@ class UploadCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Upload::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/upload');
-        CRUD::setEntityNameStrings('upload', 'uploads');
+        $this->crud->setModel(\App\Models\Upload::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/upload');
+        $this->crud->setEntityNameStrings('upload', 'uploads');
     }
 
     /**
@@ -39,15 +39,15 @@ class UploadCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
-        CRUD::column('name');
-        CRUD::column('brand');
-        CRUD::column('price_day');
-        CRUD::column('seat');
-        CRUD::column('engine');
-        CRUD::column('model');
-        CRUD::column('description');
-        CRUD::addColumn([
+        $this->crud->column('id');
+        $this->crud->column('name');
+        $this->crud->column('brand');
+        $this->crud->column('price_day');
+        $this->crud->column('seat');
+        $this->crud->column('engine');
+        $this->crud->column('model');
+        $this->crud->column('description');
+        $this->crud->addColumn([
             'name'      => 'image', // The db column name
             'label'     => 'Image', // Table column heading
             'type'      => 'image',
@@ -61,9 +61,27 @@ class UploadCrudController extends CrudController
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
+         * - $this->crud->column('price')->type('number');
+         * - $this->crud->addColumn(['name' => 'price', 'type' => 'number']); 
          */
+    }
+
+    public function setupShowOperation()
+    {
+        $this->setupListOperation();
+
+        $this->crud->removeColumn('image');
+        $this->crud->addColumn([
+            'name'      => 'image', // The db column name
+            'label'     => 'Image', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '100px',
+            'width'  => '100px',
+        ]);
     }
 
     /**
@@ -74,17 +92,17 @@ class UploadCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(UploadRequest::class);
+        $this->crud->setValidation(UploadRequest::class);
 
         
-        CRUD::field('name');
-        CRUD::field('brand');
-        CRUD::field('price_day');
-        CRUD::field('seat');
-        CRUD::field('engine');
-        CRUD::field('model');
-        CRUD::field('description');
-        CRUD::addField([   // Upload
+        $this->crud->field('name');
+        $this->crud->field('brand');
+        $this->crud->field('price_day');
+        $this->crud->field('seat');
+        $this->crud->field('engine');
+        $this->crud->field('model');
+        $this->crud->field('description');
+        $this->crud->addField([   // Upload
             'name'      => 'image',
             'label'     => 'Image',
             'type'      => 'upload',
@@ -94,8 +112,8 @@ class UploadCrudController extends CrudController
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         * - $this->crud->field('price')->type('number');
+         * - $this->crud->addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
 

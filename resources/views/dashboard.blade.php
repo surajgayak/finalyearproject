@@ -47,13 +47,16 @@
             <div class="minidiv bg-blue-600"></div>
         </div>
         <div class="jesus">
-        <x-card title="Audi" image="/images/audi.jpg"/>
-        <x-card title="Ferrari" image="/images/audi1.png"/>
-        <x-card title="Lambo" image="/images/audi3.png"/>
-        <x-card title="Bugati" image="/images/l.png"/>
-        <x-card title="Mercedes" image="/images/lambo.png"/>
-        <x-card title="BMW" image="/images/lm.png"/>
-    </div>
+            @foreach ($vehicles as $vehicle)
+                <x-card title="{{ ucfirst($vehicle->name) }}" image="{{ asset('storage/' . $vehicle->image) }}" desc="{{ ucfirst($vehicle->description) }}" />
+            @endforeach
+            {{-- <x-card title="Audi" image="/images/audi.jpg"/>
+            <x-card title="Ferrari" image="/images/audi1.png"/>
+            <x-card title="Lambo" image="/images/audi3.png"/>
+            <x-card title="Bugati" image="/images/l.png"/>
+            <x-card title="Mercedes" image="/images/lambo.png"/>
+            <x-card title="BMW" image="/images/lm.png"/> --}}
+        </div>
       </div>
       {{-- ........................WHY HAMRO RENTAL SERVICE............................ --}}
       <div class="rentalservice">
