@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\DriverRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Illuminate\Support\Facades\Hash;
+
 
 /**
  * Class DriverCrudController
@@ -43,7 +45,7 @@ class DriverCrudController extends CrudController
         $this->crud->column('fullname');
         $this->crud->column('contact');
         $this->crud->column('email');
-        $this->crud->column('password');
+        $this->crud->column ('password');
         $this->crud->addColumn([
             'name'      => 'licence', // The db column name
             'label'     => 'Licence', // Table column heading
@@ -52,8 +54,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '30px',
-            'width'  => '30px',
+            'height' => '70px',
+            'width'  => '70px',
         ]);
 
         $this->crud->addColumn([
@@ -64,8 +66,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '30px',
-            'width'  => '30px',
+            'height' => '70px',
+            'width'  => '70px',
         ]);
 
         $this->crud->addColumn([
@@ -76,8 +78,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '30px',
-            'width'  => '30px',
+            'height' => '70px',
+            'width'  => '70px',
         ]);
 
      
@@ -91,24 +93,13 @@ class DriverCrudController extends CrudController
          */
     }
 
+    
     public function setupShowOperation()
     {
         $this->setupListOperation();
-
-        $this->crud->removeColumn('image');
         $this->crud->removeColumn('licence');
         $this->crud->removeColumn('bluebook');
-        $this->crud->addColumn([
-            'name'      => 'image', // The db column name
-            'label'     => 'Image', // Table column heading
-            'type'      => 'image',
-            'prefix' => 'storage/',
-            // image from a different disk (like s3 bucket)
-            // 'disk'   => 'disk-name', 
-            // optional width/height if 25px is not ok with you
-            'height' => '100px',
-            'width'  => '100px',
-        ]);
+        $this->crud->removeColumn('image');
 
         $this->crud->addColumn([
             'name'      => 'licence', // The db column name
@@ -118,8 +109,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '100px',
-            'width'  => '100px',
+            'height' => '70px',
+            'width'  => '70px',
         ]);
 
         $this->crud->addColumn([
@@ -130,8 +121,21 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '100px',
-            'width'  => '100px',
+            'height' => '70px',
+            'width'  => '70px',
+        ]);
+
+
+        $this->crud->addColumn([
+            'name'      => 'image', // The db column name
+            'label'     => 'Image', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '70px',
+            'width'  => '70px',
         ]);
     }
 
@@ -147,7 +151,7 @@ class DriverCrudController extends CrudController
         $this->crud->field('fullname');
         $this->crud->field('contact');
         $this->crud->field('email');
-        $this->crud->field('password');
+        $this->crud-> field('password');
         $this->crud->addField([   // Upload
             'name'      => 'image',
             'label'     => 'Image',

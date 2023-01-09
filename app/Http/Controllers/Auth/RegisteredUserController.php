@@ -44,6 +44,9 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        $vehicles = \App\Models\Upload::all();
+
+        return view('dashboard', compact('vehicles'));
 
         event(new Registered($user));
 
@@ -51,4 +54,7 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+    
+  
+
 }

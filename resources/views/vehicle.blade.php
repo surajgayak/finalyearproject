@@ -39,56 +39,16 @@
         {{--  --}}
         <br>
         
-        <div class="desc1">
-
-            <div class="imgsrc">
-                <img src="/images/lamm.png">
-            </div>
-            <div class="imgdesc">
-                <h1>Lamborgini</h1>   
-                <p class="py-2"> Eos vel voluptate laudantium aut maxime reprehenderit dolore. Tempora natus sunt aliquid?</p>            
-                <h3 class="py-2">Rs.10000/day</h3>
-                <div class="icons">
-                    <div class="i1 i">
-                        <i class="fa-solid fa-user"></i> &nbsp 2 Seat
-                    </div>
-                    <div class="i2 i"><i class="fa-solid fa-car"></i> &nbsp Petrol Engine
-                    </div>
-                    <div class="i3 i"><i class="fa-regular fa-calendar-days"></i>&nbsp 2022 Model</div>
-                </div>
-                <button class="text-white bg-blue-500 rounded p-2">Book Now</button>
-            </div>
-        </div>
-
+      
 
 {{--  --}}
         <br>
-        <div class="desc1">
-
-            <div class="imgsrc">
-                <img src="/images/audi1.png">
-
-            </div>
-            <div class="imgdesc">
-                <h1>Lamborgini</h1>   
-                <p class="py-2"> Eos vel voluptate laudantium aut maxime reprehenderit dolore. Tempora natus sunt aliquid?</p>            
-                <h3 class="py-2">Rs.10000/day</h3>
-                <div class="icons">
-                    <div class="i1 i">
-                        <i class="fa-solid fa-user"></i> &nbsp 2 Seat
-                    </div>
-                    <div class="i2 i"><i class="fa-solid fa-car"></i> &nbsp Petrol Engine
-                    </div>
-                    <div class="i3 i"><i class="fa-regular fa-calendar-days"></i>&nbsp 2022 Model</div>
-                </div>
-                <button class="text-white bg-blue-500 rounded p-2">Book Now</button>
-            </div>
-        </div>
+       
     </div>
 
     <br>
 
-    
+    {{-- LATEST vehicles --}}
     <div class="latest">
         <div class="minilatest">
             <div class="imgsec">

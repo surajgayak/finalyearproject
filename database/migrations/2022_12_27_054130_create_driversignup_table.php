@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('driversignup', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
-            $table->string('contact');
+            $table->string('contact')->unique();
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string(bcrypt('password'));
             $table->string('image');
             $table->string('licence');
             $table->string('bluebook');

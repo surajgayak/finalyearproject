@@ -20,7 +20,10 @@ class DriversignupController extends Controller
         $driversignup->licence=$request['licence']->store('licence');
         $driversignup->bluebook=$request['bluebook']->store('bluebook');
         $driversignup->save();
-        return view('dashboard');
+
+        $vehicles = \App\Models\Upload::all();
+
+        return view('dashboard', compact('vehicles'));
 
     }
     

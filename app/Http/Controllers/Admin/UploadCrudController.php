@@ -55,8 +55,8 @@ class UploadCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '30px',
-            'width'  => '30px',
+            'height' => '100px',
+            'width'  => '100px',
         ]);
 
         /**
@@ -69,7 +69,6 @@ class UploadCrudController extends CrudController
     public function setupShowOperation()
     {
         $this->setupListOperation();
-
         $this->crud->removeColumn('image');
         $this->crud->addColumn([
             'name'      => 'image', // The db column name

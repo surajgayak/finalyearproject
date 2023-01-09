@@ -63,6 +63,7 @@ class Driver extends Model
 
     // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
     }
+ 
 
     public function setBluebookAttribute($value)
     {
@@ -82,9 +83,12 @@ class Driver extends Model
         $disk = "public";
         $destination_path = "licence";
         $fileName = mt_rand(111111,999999) . '.jpg';
-
+        
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
-
+        
     // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
     }
+    
+
+
 }
