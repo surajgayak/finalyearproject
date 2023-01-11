@@ -11,30 +11,33 @@
     </button>
 </div>
 <div class="mainsection">
+
     <div class="desc">
+        @foreach($vehicles as $vehicle)  
 
         <div class="desc1 ">
 
             <div class="imgsrc">
-                <img src="/images/audi.jpg">
-
+                <img src="
+                {{$vehicle->image}}">
             </div>
             <div class="imgdesc">
-                <h1>Lamborgini</h1>   
-                <p class="py-2"> Eos vel voluptate laudantium aut maxime reprehenderit dolore. Tempora natus sunt aliquid?</p>            
-                <h3 class="py-2">Rs.10000/day</h3>
+                <h1>{{$vehicle->title}}</h1>   
+                <p class="py-2">{{$vehicle->desc}}</p>            
+                <h3 class="py-2">{{$vehicle->price_day}}</h3>
                 <div class="icons">
                     <div class="i1 i">
-                        <i class="fa-solid fa-user"></i> &nbsp 2 Seat
+                        <i class="fa-solid fa-user"></i> &nbsp {{$vehicle->seat}} Seat
                     </div>
-                    <div class="i2 i"><i class="fa-solid fa-car"></i> &nbsp Petrol Engine
+                    <div class="i2 i"><i class="fa-solid fa-car"></i> &nbsp {{$vehicle->engine}} Engine
                     </div>
-                    <div class="i3 i"><i class="fa-regular fa-calendar-days"></i>&nbsp 2022 Model</div>
+                    <div class="i3 i"><i class="fa-regular fa-calendar-days"></i>&nbsp{{$vehicle->model}} Model</div>
                 </div>
                 <button class="text-white bg-blue-500 rounded p-2">Book Now</button>
             </div>
 
         </div>
+        @endforeach
 
         {{--  --}}
         <br>
@@ -48,7 +51,7 @@
 
     <br>
 
-    {{-- LATEST vehicles --}}
+    {{-- LATEST vehicleicles --}}
     <div class="latest">
         <div class="minilatest">
             <div class="imgsec">

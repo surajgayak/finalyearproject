@@ -54,8 +54,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '70px',
-            'width'  => '70px',
+            'height' => '30px',
+            'width'  => '30px',
         ]);
 
         $this->crud->addColumn([
@@ -66,8 +66,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '70px',
-            'width'  => '70px',
+            'height' => '30px',
+            'width'  => '30px',
         ]);
 
         $this->crud->addColumn([
@@ -78,8 +78,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '70px',
-            'width'  => '70px',
+            'height' => '30px',
+            'width'  => '30px',
         ]);
 
      
@@ -109,8 +109,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '70px',
-            'width'  => '70px',
+            'height' => '50px',
+            'width'  => '50px',
         ]);
 
         $this->crud->addColumn([
@@ -121,8 +121,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '70px',
-            'width'  => '70px',
+            'height' => '50px',
+            'width'  => '50px',
         ]);
 
 
@@ -134,8 +134,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '70px',
-            'width'  => '70px',
+            'height' => '50px',
+            'width'  => '50px',
         ]);
     }
 

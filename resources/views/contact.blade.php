@@ -15,7 +15,8 @@
   
       <div class="flex flex-wrap">
         <div class="grow-0 shrink-0 basis-auto mb-12 lg:mb-0 w-full lg:w-5/12 px-3 lg:px-6">
-          <form>
+          <form action="{{route('enquirycontact')}}" method="post">
+            @csrf
             <div class="form-group mb-6">
               <input type="text" class="form-control block
               w-full
@@ -30,8 +31,8 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                placeholder="Name">
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name"
+                placeholder="Name" name="name" required>
             </div>
             <div class="form-group mb-6">
               <input type="email" class="form-control block
@@ -48,8 +49,28 @@
               ease-in-out
               m-0
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
-                placeholder="Email address">
+                placeholder="Email address" name="email" required >
             </div>
+
+            <div class="form-group mb-6">
+              <input type="number" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="contact"
+                placeholder="Contact"  min="0" name="contact" required>
+            </div>
+
+
             <div class="form-group mb-6">
               <textarea class="
               form-control
@@ -67,7 +88,7 @@
               ease-in-out
               m-0
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            " id="exampleFormControlTextarea13" rows="3" placeholder="Message"></textarea>
+            " id="exampleFormControlTextarea13" rows="3" placeholder="Message" required name=" message"></textarea>
             </div>
             
             <button type="submit" class="

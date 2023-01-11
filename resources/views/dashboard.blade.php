@@ -73,7 +73,7 @@
               
                 <h1 class="text-xl px-2"><b>></b> All nepal safari</h1>
                 <br>
-                <p>Hamro Rental Service is the online vehicle rental service .We provide all the rental 
+                <p class="text-xl">Hamro Rental Service is the online vehicle rental service .We provide all the rental 
                     facility. Users can search a provienent vehicle and book for their program.We provide 
                     a service as fast as possible and helps you in every destination.It is more flexible .
                     Users are able to see the vehicle ,see the description like no. of seat,price per day/trip,

@@ -36,6 +36,8 @@ Route::get('/vehicle',[VehicleController::class,'vehicle'])->name('vehicle');
 Route::get('/service',[ServiceController::class,'service'])->name('service');
 Route::get('/booking',[BookingController::class,'booking'])->name('booking');
 Route::get('/contact',[ContactController::class,'contact'])->name('contact');
+Route::post('/enquirycontact',[ContactController::class,'enquirycontact'])->name('enquirycontact');
+
 
 
 Route::get('/dashboard', function () {
