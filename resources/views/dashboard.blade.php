@@ -23,41 +23,46 @@
         <p class="text-1xl">We provide the vehicle in a rent for your program . Find the best vehicle and book the best for your program .</p>
         <br><br>
         </div>
+
+        <form action="{{route('search')}}" method="post">
+        @csrf
         <div class="searchsection bg-amber-400  m-auto rounded-2xl flex justify-around items-center flex-wrap">
             <div class="pickup okk bg-white rounded-2xl ">
-                <input type="text" class=" rounded-2xl border-none       focus:outline-none my-4 " placeholder="  Pick up a Location">
+                <input type="text" class=" rounded-2xl border-none  outline-none my-4 " name="pickup" placeholder=" Pick up a Location" required >
             </div>
             <br>
             <div class="date okk bg-white rounded-2xl">
                 <h2 class="pt-3 px-3 text-gray">Date</h2>
-                <input type="date" class="mx-3" >
+                <input type="date" name="date" class="mx-3" required>
             </div>
             <br><br>
             <div class="time okk  bg-white rounded-2xl">
                 <h2 class="pt-3 px-3 text-gray">Time</h2>
-                <input type="time" class="mx-3">
+                <input type="time" name="time" class="mx-3" required>
             </div>
-            <button class=" w-32 h-16 bg-blue-600 rounded-2xl text-white ">Search</button>
+            <input type="submit" class=" w-32 h-16 bg-blue-600 rounded-2xl text-white cursor-pointer " value="Search">
         </div>
+    </form>
        </div>
        {{--........................... HERO SECTION ENDS ..............................--}}
-      <div class="howitwork">
+      <div class="howitwork ">
         <div class=" latest text-3xl bg-blue-600">
             <h1>Latest Vehicles</h1>
             <div class="minidiv bg-blue-600"></div>
         </div>
-        <div class="jesus">
+        <div class="jesus  ">
+
             @foreach ($vehicles as $vehicle)
+       
                 <x-card title="{{ ucfirst($vehicle->name) }}" image="{{ asset('storage/' . $vehicle->image) }}" desc="{{ ucfirst($vehicle->description) }}" />
-            @endforeach
-            {{-- <x-card title="Audi" image="/images/audi.jpg"/>
-            <x-card title="Ferrari" image="/images/audi1.png"/>
-            <x-card title="Lambo" image="/images/audi3.png"/>
-            <x-card title="Bugati" image="/images/l.png"/>
-            <x-card title="Mercedes" image="/images/lambo.png"/>
-            <x-card title="BMW" image="/images/lm.png"/> --}}
+               
+                    @endforeach
+            <br>    
         </div>
       </div>
+      <br>
+      <div class="but"><a href="{{route('vehicle')}}">See more</a></div>
+
       {{-- ........................WHY HAMRO RENTAL SERVICE............................ --}}
       <div class="rentalservice">
         <h1 class="text-center text-4xl pt-5">Why hamro rental service ?</h1>

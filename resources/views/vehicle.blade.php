@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="description pt-24 ">
-    <h1 class="text-center text-4xl pt-12 "><< <span class="text-red-600">Vehicle</span> Description >></h1>
+    <h1 class="text-center text-4xl pt-12 font-bold"><< Vehicles<span class="text-red-600"> Description</span>  >></h1>
 </div>
 <div class="cardetail">
-    <h2 class="text-4xl font-bold">Vehicle Detail</h2>
+    <h2 class="text-3xl font-bold underline"> Available Vehicles</h2>
     <button> Latest Cars
         <div class="triangle"></div>
     </button>
@@ -13,42 +13,38 @@
 <div class="mainsection">
 
     <div class="desc">
-        @foreach($vehicles as $vehicle)  
-
+       
+        @foreach($vehicle as $veh)
+       <form action="{{route('vehicledescs',$veh->id)}}" method="POST" >
+        @csrf
         <div class="desc1 ">
-
             <div class="imgsrc">
-                <img src="
-                {{$vehicle->image}}">
+                <img src="{{asset('storage/' . $veh->image)}}">
             </div>
             <div class="imgdesc">
-                <h1>{{$vehicle->title}}</h1>   
-                <p class="py-2">{{$vehicle->desc}}</p>            
-                <h3 class="py-2">{{$vehicle->price_day}}</h3>
+                <h1>{{ucfirst($veh->name)}}</h1>   
+                <p class="py-2">{{ucfirst($veh->description)}}</p>            
+                <h3 class="py-2">{{ucfirst($veh->price_day)}}/day</h3>
                 <div class="icons">
                     <div class="i1 i">
-                        <i class="fa-solid fa-user"></i> &nbsp {{$vehicle->seat}} Seat
+                        <i class="fa-solid fa-user"></i> &nbsp {{$veh->seat}} Seat
                     </div>
-                    <div class="i2 i"><i class="fa-solid fa-car"></i> &nbsp {{$vehicle->engine}} Engine
+                    <div class="i2 i"><i class="fa-solid fa-car"></i> &nbsp {{$veh->engine}} Engine
                     </div>
-                    <div class="i3 i"><i class="fa-regular fa-calendar-days"></i>&nbsp{{$vehicle->model}} Model</div>
+                    <div class="i3 i"><i class="fa-regular fa-calendar-days"></i>&nbsp {{$veh->model}} Model</div>
                 </div>
-                <button class="text-white bg-blue-500 rounded p-2">Book Now</button>
+                
+                {{-- <a href="}}"><button class="text-white bg-blue-500 rounded p-2" >Book Now</button></a> --}}
+                <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer">
             </div>
 
         </div>
-        @endforeach
+    </form>
+    @endforeach
 
-        {{--  --}}
         <br>
-        
-      
-
-{{--  --}}
-        <br>
-       
     </div>
-
+{{--  --}}
     <br>
 
     {{-- LATEST vehicleicles --}}

@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UploadRequest;
+use App\Http\Requests\InsuranceRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class UploadCrudController
+ * Class InsuranceCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class UploadCrudController extends CrudController
+class InsuranceCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class UploadCrudController extends CrudController
      */
     public function setup()
     {
-        $this->crud->setModel(\App\Models\Upload::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/upload');
-        $this->crud->setEntityNameStrings('upload', 'uploads');
+        $this->crud->setModel(\App\Models\Insurance::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/insurance');
+        $this->crud->setEntityNameStrings('insurance', 'insurances');
     }
 
     /**
@@ -39,48 +39,28 @@ class UploadCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        $this->crud->column('id');
+        
         $this->crud->column('name');
-        $this->crud->column('brand');
-        $this->crud->column('price_day');
-        $this->crud->column('seat');
-        $this->crud->column('engine');
         $this->crud->column('model');
-        $this->crud->column('description');
+        $this->crud->column('insurance_num');
         $this->crud->addColumn([
-            'name'      => 'image', // The db column name
-            'label'     => 'Image', // Table column heading
+            'name'      => 'bluebook', // The db column name
+            'label'     => 'Bluebook', // Table column heading
             'type'      => 'image',
             'prefix' => 'storage/',
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '100px',
-            'width'  => '100px',
+            'height' => '30px',
+            'width'  => '30px',
         ]);
+
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
-         * - $this->crud->column('price')->type('number');
-         * - $this->crud->addColumn(['name' => 'price', 'type' => 'number']); 
+         * - CRUD::column('price')->type('number');
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
-    }
-
-    public function setupShowOperation()
-    {
-        $this->setupListOperation();
-        $this->crud->removeColumn('image');
-        $this->crud->addColumn([
-            'name'      => 'image', // The db column ndriverPame
-            'label'     => 'Image', // Table column heading
-            'type'      => 'image',
-            'prefix' => 'storage/',
-            // image from a different disk (like s3 bucket)
-            // 'disk'   => 'disk-name', 
-            // optional width/height if 25px is not ok with you
-            'height' => '100px',
-            'width'  => '100px',
-        ]);
     }
 
     /**
@@ -91,28 +71,23 @@ class UploadCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(UploadRequest::class);
-
-        
+        $this->crud->setValidation(InsuranceRequest::class);
         $this->crud->field('name');
-        $this->crud->field('brand');
-        $this->crud->field('price_day');
-        $this->crud->field('seat');
-        $this->crud->field('engine');
         $this->crud->field('model');
-        $this->crud->field('description');
-        $this->crud->addField([   // Upload
-            'name'      => 'image',
-            'label'     => 'Image',
+        $this->crud->field('insurance_num');
+        $this->crud-> addField([   // Upload
+            'name'      => 'bluebook',
+            'label'     => 'Bluebook',
             'type'      => 'upload',
             'upload'    => true,
         ]);
-
+      
+        
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - $this->crud->field('price')->type('number');
-         * - $this->crud->addField(['name' => 'price', 'type' => 'number'])); 
+         * - CRUD::field('price')->type('number');
+         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
 

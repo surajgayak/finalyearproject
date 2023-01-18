@@ -76,12 +76,23 @@
     color: white;
 }
 .howitwork .jesus {
+    width: 100%;
+    height: auto;
     background-color: white;
-    display: flex;
-    justify-content: space-around;
+    display: inline-flex;
+    justify-content: center;
     padding: 40px;
     flex-wrap: wrap;
     gap: 20px;
+}
+.but a {
+    text-align: center;
+    margin-left: 45%;
+    display: inline-block;
+    color: blue;
+    text-decoration: underline;
+    font-size: 18px;
+    padding-bottom: 10px;
 }
 /* ....................RENTAL SERVICE................. */
 .rentalservice {
@@ -186,7 +197,7 @@
     width: 100px;
     height: 100px;
 }
-/* ............................VEHICLE DESCRIPTION PAGE............... */
+/* ............................VEHICLE  PAGE............... */
 .description span {
     color: red;
 }
@@ -235,7 +246,7 @@
 }
 .mainsection .desc .desc1 {
     width: auto;
-    min-width: 320px;
+    min-width: 400px;
     margin: 20px auto;
     height: auto;
     display: flex;
@@ -250,17 +261,17 @@
 }
 .mainsection .desc .desc1 .imgsrc {
     width: 400px;
-    height: 250px;
+    height: auto;
     background-size: cover;
 }
 .mainsection .desc .desc1 .imgsrc img {
     width: 400px;
-    height: 250px;
+    height: 100%;
     background-size: cover;
 }
 .mainsection .desc .desc1 .imgdesc {
-    width: 400px;
-    height: 250px;
+    width: 500px;
+    height: auto;
     padding-top: 5px;
     padding-left: 10px;
 }
@@ -565,19 +576,19 @@ svg .polygon {
     justify-content: center;
     gap: 10px;
     background-color: white;
-    align-items: center;
+    /* align-items: center; */
     flex-wrap: wrap;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px;
     /* rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 .booking .minibooking .book .img {
-    width: 300px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
 }
 .booking .minibooking .book .img img {
-    width: 300px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
 }
 .booking .minibooking .book .text {
     width: 300px;
@@ -597,7 +608,98 @@ svg .polygon {
     margin-left: 20px;
     cursor: pointer;
 }
+/* ...............................VEHICLEDESC PAGE....................... */
 
+.contain {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 150px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.car-info {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    /* margin-bottom: 30px; */
+    /* border: 1px solid red; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.car-info img {
+    width: 60%;
+    height: 400px;
+}
+
+.descriptionss {
+    width: 30%;
+    padding: 20px;
+    font-size: 20px;
+    /* border: 1px solid red; */
+}
+
+.descriptionss h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.rent-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.rent-btn:hover {
+    background-color: #3e8e41;
+}
+
+.features {
+    border-top: 1px solid #ccc;
+    padding: 30px;
+    margin-top: 30px;
+    font-size: 18px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.features .feat {
+    /* border: 1px solid red; */
+    width: 300px;
+}
+.features .descs {
+    /* border: 1px solid red; */
+    width: 700px;
+    height: 250px;
+}
+
+.features h4 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.features ul {
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 10px;
+}
 /* ......................................................... */
 
 @media (max-width: 768px) {

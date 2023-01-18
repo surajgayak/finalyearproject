@@ -23,10 +23,7 @@ class DriversignupController extends Controller
         
         $vehicles = \App\Models\Upload::all();
         
-        // return view('dashboard')->with('vehicle', $vehicles);
-
         return view('dashboard', compact('vehicles'));
-        // return view('vehicle',compact('vehicles'));
 
     }
     
