@@ -15,14 +15,13 @@ class DriversignupController extends Controller
         $driversignup->fullname=$request['fullname'];
         $driversignup->contact=$request['contact'];
         $driversignup->email=$request['email'];
-        $driversignup->password= $request['password'];
+        $driversignup->password=md5($request['password']);
         $driversignup->image=$request['photo']->store('uploadimages');
         $driversignup->licence=$request['licence']->store('licence');
         $driversignup->bluebook=$request['bluebook']->store('bluebook');
         $driversignup->save(); 
         
         $vehicles = \App\Models\Upload::all();
-        
         return view('dashboard', compact('vehicles'));
 
     }

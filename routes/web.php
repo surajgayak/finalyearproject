@@ -9,24 +9,10 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VehicledescController;
 use App\Http\Controllers\SearchController;
-
+use App\Http\Controllers\SeevehicleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('dashboard');
-// });
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/driversignup',[DriversignupController::class,'driversignup'])->name('driversignup');
@@ -40,6 +26,10 @@ Route::get('/booking',[BookingController::class,'booking'])->name('booking');
 Route::post('/vehicledescs/{id}',[VehicledescController::class,'vehicledescs'])->name('vehicledescs');
 Route::get('/contact',[ContactController::class,'contact'])->name('contact');
 Route::post('/enquirycontact',[ContactController::class,'enquirycontact'])->name('enquirycontact');
+Route::post('/bookings/{id}',[BookingController::class,'bookings'])->name('bookings');
+Route::post('/deletebooking/{id}',[BookingController::class,'deletebooking'])->name('deletebooking');
+Route::get('/seevehicle',[SeevehicleController::class,'seevehicle'])->name('seevehicle');
+
 
 
 

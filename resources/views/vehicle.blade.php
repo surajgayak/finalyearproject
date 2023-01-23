@@ -1,6 +1,17 @@
 @extends('components.boilerplate')
 
 @section('content')
+@if (session()->has('status')){
+  
+    <div class=" mt-24 text-center text-white alert bg-red-400 rounded-lg py-5 px-6  text-4xl" role="alert">
+        {{session('status')}}
+        <button type="button" class="btn-close box-content w-4 h-4 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+}
+
+    
+@endif
 <div class="description pt-24 ">
     <h1 class="text-center text-4xl pt-12 font-bold"><< Vehicles<span class="text-red-600"> Description</span>  >></h1>
 </div>

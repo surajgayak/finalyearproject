@@ -10,4 +10,5 @@ class VehicleController extends Controller
     public function vehicle(){
         return view('vehicle');
     }
+
 }

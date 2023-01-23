@@ -611,15 +611,16 @@ svg .polygon {
 /* ...............................VEHICLEDESC PAGE....................... */
 
 .contain {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding-top: 150px;
     background-color: #fff;
     box-shadow: 0 0 10px #ccc;
+    padding-bottom: 20px;
 }
 
 .car-info {
-    width: 80%;
+    width: 70%;
     margin: 30px auto;
     display: flex;
     align-items: center;
@@ -652,57 +653,108 @@ svg .polygon {
     color: #4caf50;
     font-weight: bold;
 }
+.contain .car-info .descriptionss input[type="submit"] {
+    background-color: green;
+    color: white;
+}
 
 .rent-btn {
-    background-color: #4caf50;
-    color: white;
+    background-color: green;
+    color: black;
     padding: 12px 20px;
     border: none;
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s ease;
 }
-
-.rent-btn:hover {
-    background-color: #3e8e41;
-}
-
-.features {
-    border-top: 1px solid #ccc;
+.contain .featuress {
+    width: 100%;
+    height: 300px;
     padding: 30px;
-    margin-top: 30px;
+    margin-top: 30px auto;
     font-size: 18px;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     gap: 40px;
 }
-.features .feat {
-    /* border: 1px solid red; */
+.contain .featuress .feat {
     width: 300px;
 }
-.features .descs {
-    /* border: 1px solid red; */
+.contain .featuress .descs {
     width: 700px;
     height: 250px;
 }
 
-.features h4 {
+.featuress h4 {
     margin-bottom: 10px;
     font-size: 25px;
     font-weight: bold;
 }
 
-.features ul {
+.featuress ul {
     list-style: none;
 }
 
-.features li {
+.featuress li {
     margin-bottom: 10px;
 }
-/* ......................................................... */
 
-@media (max-width: 768px) {
+/* ..........................DASHBOARD CONTENT......................... */
+.dashboardcontent {
+    width: 100%;
+    height: 800px;
+}
+.dashboardcontent .widgets {
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+.dashboardcontent .widgets .one {
+    width: 300px;
+    height: 220px;
+    padding-top: 10px;
+    border-radius: 10px;
+}
+.dashboardcontent .widgets .one p {
+    font-size: 50px;
+    font-weight: bold;
+}
+.dashboardcontent .widgets .u {
+    background-color: #fa5555;
+}
+.dashboardcontent .widgets .v {
+    background-color: #8f55fa;
+}
+.dashboardcontent .widgets .i {
+    background-color: #5df5a4;
+}
+.dashboardcontent .widgets .e {
+    background-color: #d75df5;
+}
+.dashboardcontent .widgets .d {
+    background-color: #7b55fa;
+}
+.dashboardcontent .widgets .inc {
+    background-color: #5a92fa;
+}
+/* ...................See vehicle........... */
+
+.seevehicle {
+    width: 100%;
+    height: 500px;
+    border: 1px solid red;
+}
+.miniseevehicle {
+}
+.........................................................
+    */
+    @media
+    (max-width: 768px) {
     .rentalservice {
         width: 100%;
         height: 750px;

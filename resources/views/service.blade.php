@@ -6,8 +6,8 @@
     <div class="miniservice">
         <div class="servicecard">
             <div class="icon">
-                <i class="fa-regular fa-light-emergency-on"></i>
-            </div>
+                <i class="fa-solid fa-lightbulb"></i>
+                                    </div>
             <h1 class="text-center text-xl">Emergency</h1>
             <p class="px-5 py-2">During Emergency case a users can give a notification directly to the company
                 .A admin can handel and manage it with in a proper time.

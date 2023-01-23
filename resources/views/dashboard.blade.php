@@ -56,7 +56,7 @@
        
                 <x-card title="{{ ucfirst($vehicle->name) }}" image="{{ asset('storage/' . $vehicle->image) }}" desc="{{ ucfirst($vehicle->description) }}" />
                
-                    @endforeach
+            @endforeach
             <br>    
         </div>
       </div>

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 use App\Models\Upload;
+use App\Models\Booking;
+
 use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('vehicle',function ($view){
             $view->with('vehicle',Upload::all());
         });
-
+       
     }
 
 }
