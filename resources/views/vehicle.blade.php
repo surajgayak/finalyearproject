@@ -1,23 +1,15 @@
 @extends('components.boilerplate')
 
 @section('content')
-@if (session()->has('status')){
-  
-    <div class=" mt-24 text-center text-white alert bg-red-400 rounded-lg py-5 px-6  text-4xl" role="alert">
-        {{session('status')}}
-        <button type="button" class="btn-close box-content w-4 h-4 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      
-}
+
 
     
-@endif
 <div class="description pt-24 ">
     <h1 class="text-center text-4xl pt-12 font-bold"><< Vehicles<span class="text-red-600"> Description</span>  >></h1>
 </div>
 <div class="cardetail">
     <h2 class="text-3xl font-bold underline"> Available Vehicles</h2>
-    <button> Latest Cars
+    <button> Comming Soon
         <div class="triangle"></div>
     </button>
 </div>
@@ -62,52 +54,16 @@
     <div class="latest">
         <div class="minilatest">
             <div class="imgsec">
-                <img src="/images/c1.jpg">
+                <img src="">
             </div>
             <div class="textsection">
-                <h1>Lamborgini</h1>
-                <p>Rs 10000/day</p>
-                <i class="fa-solid fa-user py-3"></i> &nbsp 2 Seat
+                <h1>Lambo</h1>
+                <p>100/day</p>
+                
             </div>
         </div>
-        {{--  --}}
+
         
-        <div class="minilatest">
-            <div class="imgsec">
-                <img src="/images/c1.jpg">
-            </div>
-            <div class="textsection">
-                <h1>Lamborgini</h1>
-                <p>Rs 10000/day</p>
-                <i class="fa-solid fa-user py-3"></i> &nbsp 2 Seat
-            </div>
-        </div>
-        {{--  --}}
-        <div class="minilatest">
-            <div class="imgsec">
-                <img src="/images/c1.jpg">
-            </div>
-            <div class="textsection">
-                <h1>Lamborgini</h1>
-                <p>Rs 10000/day</p>
-                <i class="fa-solid fa-user py-3"></i> &nbsp 2 Seat
-            </div>
-        </div>
-
-        <div class="minilatest">
-            <div class="imgsec">
-                <img src="/images/c1.jpg">
-            </div>
-            <div class="textsection">
-                <h1>Lamborgini</h1>
-                <p>Rs 10000/day</p>
-                <i class="fa-solid fa-user py-3"></i> &nbsp 2 Seat
-            </div>
-        </div>
-
-
-        {{--  --}}
-
     </div>
 </div>
 @endsection

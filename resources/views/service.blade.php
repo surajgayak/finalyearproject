@@ -1,7 +1,7 @@
 @extends('components.boilerplate')
 
 @section('content')
-<h1 class='pt-36 text-center text-4xl pb-8' ><< <span>Service</span> Section >> </h1>
+<h1 class='pt-36 text-center text-4xl pb-8 font-bold' ><< <span>Service</span> Section >> </h1>
 <div class="service">
     <div class="miniservice">
         <div class="servicecard">

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class VehicledescController extends Controller
 {
     public function vehicledesc(){
-        return view('vehicledesc');
+        return view('vehicledesc')->with('status','Booking has been added !!!');
         
     }
    public function vehicledescs($id){

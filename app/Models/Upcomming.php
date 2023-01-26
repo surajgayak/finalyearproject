@@ -5,18 +5,17 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Upload extends Model
+class Upcomming extends Model
 {
     use CrudTrait;
 
-    
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'upload';
+    protected $table = '_upcommings';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -53,15 +52,25 @@ class Upload extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
-    public function setImageAttribute($value)
-    {
-        $attribute_name = "image";
-        $disk = "public";
-        $destination_path = "uploadimages";
-        $fileName = mt_rand(10000000,99999999). '.jpg';
 
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
+    // public function setImageAttribute($value)
+    // {
+    //     $attribute_name = "image";
+    //     $disk = "public";
+    //     $destination_path = "uploadimages";
+    //     $fileName = mt_rand(10000000,99999999). '.jpg';
 
-    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    //     $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
+
+    // // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    // }
+
+
+    public function setImageAttribute($value){
+        $attribute_name="image";
+        $disk="public";
+        $destination_path="upcommingimage";
+        $fileName=mt_rand(1111,5555).'.jpg';
+        $this->uploadFileToDisk($value,$attribute_name,$disk,$destination_path,$fileName);
     }
 }

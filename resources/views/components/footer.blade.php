@@ -84,7 +84,7 @@
             </li>
             <br>
             <li>
-              <a href="{{route('vehicle')}}" class="text-white"><b>></b> Vehicle</a>
+              <a href="{{route('vehicle')}}" class="text-white"><b>></b> Vehicles</a>
             </li>
             
           </ul>
@@ -95,7 +95,7 @@
   
           <ul class="list-none mb-0">
             <li>
-              <a href="{{route('service')}}" class="text-white"><b>></b> Service</a>
+              <a href="{{route('service')}}" class="text-white"><b>></b> Services</a>
             </li>
             <br>
             <li>

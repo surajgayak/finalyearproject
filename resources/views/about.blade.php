@@ -1,10 +1,10 @@
 @extends('components.boilerplate')
 
 @section('content')
-<h1 class="pt-32 text-center text-4xl pb-8"><span><< About</span> Us>></h1>
+<h1 class="pt-36 text-center text-4xl pb-8 font-bold"><span><< About</span> Us>></h1>
 <div class="about ">
     <div class="text">
-<h1 class="text-2xl"><span>Hamro</span> Rental Service</h1>
+<h1 class="text-2xl font-bold"><span>Hamro</span> Rental Service</h1>
 <br>
         <p class="text-xl">Hamro Rental Service is the online vehicle rental service .We provide all the rental 
             facility. Users can search a provienent vehicle and book for their program.We provide 

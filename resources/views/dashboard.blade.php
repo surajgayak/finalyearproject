@@ -50,11 +50,11 @@
             <h1>Latest Vehicles</h1>
             <div class="minidiv bg-blue-600"></div>
         </div>
-        <div class="jesus  ">
+        <div class="jesus ">
 
             @foreach ($vehicles as $vehicle)
        
-                <x-card title="{{ ucfirst($vehicle->name) }}" image="{{ asset('storage/' . $vehicle->image) }}" desc="{{ ucfirst($vehicle->description) }}" />
+                <x-card title="{{ ucfirst($vehicle->name) }}" image="{{ asset('storage/' . $vehicle->image) }}" desc="{{ ucfirst($vehicle->description) }}" id="{{$vehicle->id }}"  engine="{{$vehicle->engine }}"  seat="{{$vehicle->seat}}"  price="{{$vehicle->price }}" model="{{$vehicle->model }}"/>
                
             @endforeach
             <br>    

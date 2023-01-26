@@ -57,7 +57,7 @@ class Driver extends Model
         $attribute_name = "image";
         $disk = "public";
         $destination_path = "uploadimages";
-        $fileName = mt_rand(111111,999999) . '.jpg';
+        $fileName = mt_rand(1111111,9999991) . '.jpg';
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
 
@@ -65,17 +65,7 @@ class Driver extends Model
     }
  
 
-    public function setBluebookAttribute($value)
-    {
-        $attribute_name = "bluebook";
-        $disk = "public";
-        $destination_path = "bluebook";
-        $fileName = mt_rand(111111,999999) . '.jpg';
-
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
-
-    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
-    }
+  
 
     public function setLicenceAttribute($value)
     {

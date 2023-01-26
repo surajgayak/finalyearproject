@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('driversignup', function (Blueprint $table) {
+        Schema::create('_upcommings', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('contact')->unique();
-            $table->string('email')->unique();
-            $table->string(bcrypt('password'));
+            $table->string('name');
+            $table->string('desc');
             $table->string('image');
-            $table->string('licence');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('driversignup');
+        Schema::dropIfExists('_upcommings');
     }
 };

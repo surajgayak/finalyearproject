@@ -11,16 +11,18 @@ class DriversignupController extends Controller
     }
 
     public function createdriver(Request $request){
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
         $driversignup = new Driversignup;
         $driversignup->fullname=$request['fullname'];
         $driversignup->contact=$request['contact'];
         $driversignup->email=$request['email'];
         $driversignup->password=md5($request['password']);
-        $driversignup->image=$request['photo']->store('uploadimages');
-        $driversignup->licence=$request['licence']->store('licence');
-        $driversignup->bluebook=$request['bluebook']->store('bluebook');
+        $random = mt_rand(10000000,99999999);
+        $driversignup->image=$request['photo']->store('uploadimages',$random.'.jpg');
+        $driversignup->licence=$request['licence']->store('licence',$random.'.jpg');
         $driversignup->save(); 
-        
         $vehicles = \App\Models\Upload::all();
         return view('dashboard', compact('vehicles'));
 

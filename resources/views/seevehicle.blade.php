@@ -7,16 +7,35 @@
     <link rel="stylesheet" href="/style/style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="bg-blue-50">
     <x-app-layout>
-        <h1 class="pt-32 text-4xl text-center"><span>Desc</span>ription</h1>
+    </x-app-layout>
+
+        <h1 class="pt-32 text-4xl text-center font-bold"><<<span>Desc</span>ription >></h1>
         <br>
         <div class="seevehicle">
             <div class="miniseevehicle">
-                
+                <img src="{{asset('storage/' . $see->image)}}">
             </div>
-            <div class="miniseedesc"></div>
+            <br>
+            <hr>
+            <div class="miniseedesc text-xl text-gray-500">
+                <div class="text">
+                <h1>Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <b>{{ucfirst($see->name)}}</b></h1><br>
+                <h1>Price/day&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->price_day)}}</h1><br>
+                <h1>Engine &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->engine)}}</h1><br>
+                <h1>Model &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->model)}}</h1><br>
+                <h1>Fuel &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->engine)}}</h1><br>
+                <h1>Seat &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->seat)}}</h1>
+            </div>
+            <div class="descript">
+                {{ucfirst($see->description)}}
+            </div>
+            </div>
+            <hr>    
+
         </div>
-    </x-app-layout>
+<x-footer>
+</x-footer>
 </body>
 </html>

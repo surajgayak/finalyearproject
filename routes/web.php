@@ -28,7 +28,7 @@ Route::get('/contact',[ContactController::class,'contact'])->name('contact');
 Route::post('/enquirycontact',[ContactController::class,'enquirycontact'])->name('enquirycontact');
 Route::post('/bookings/{id}',[BookingController::class,'bookings'])->name('bookings');
 Route::post('/deletebooking/{id}',[BookingController::class,'deletebooking'])->name('deletebooking');
-Route::get('/seevehicle',[SeevehicleController::class,'seevehicle'])->name('seevehicle');
+Route::get('/seevehicle/{id}',[SeevehicleController::class,'seevehicle'])->name('seevehicle');
 
 
 

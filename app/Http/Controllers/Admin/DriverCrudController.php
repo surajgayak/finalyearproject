@@ -54,22 +54,11 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '30px',
-            'width'  => '30px',
+            'height' => '50px',
+            'width'  => '50px',
         ]);
 
-        // $this->crud->addColumn([
-        //     'name'      => 'bluebook', // The db column name
-        //     'label'     => 'Bluebook', // Table column heading
-        //     'type'      => 'image',
-        //     'prefix' => 'storage/',
-        //     // image from a different disk (like s3 bucket)
-        //     // 'disk'   => 'disk-name', 
-        //     // optional width/height if 25px is not ok with you
-        //     'height' => '30px',
-        //     'width'  => '30px',
-        // ]);
-
+      
         $this->crud->addColumn([
             'name'      => 'image', // The db column name
             'label'     => 'Image', // Table column heading
@@ -78,8 +67,8 @@ class DriverCrudController extends CrudController
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
-            'height' => '30px',
-            'width'  => '30px',
+            'height' => '50px',
+            'width'  => '50px',
         ]);
 
      
@@ -98,9 +87,7 @@ class DriverCrudController extends CrudController
     {
         $this->setupListOperation();
         $this->crud->removeColumn('licence');
-        $this->crud->removeColumn('bluebook');
         $this->crud->removeColumn('image');
-
         $this->crud->addColumn([
             'name'      => 'licence', // The db column name
             'label'     => 'Licence', // Table column heading
@@ -113,18 +100,7 @@ class DriverCrudController extends CrudController
             'width'  => '50px',
         ]);
 
-        // $this->crud->addColumn([
-        //     'name'      => 'bluebook', // The db column name
-        //     'label'     => 'Bluebook', // Table column heading
-        //     'type'      => 'image',
-        //     'prefix' => 'storage/',
-        //     // image from a different disk (like s3 bucket)
-        //     // 'disk'   => 'disk-name', 
-        //     // optional width/height if 25px is not ok with you
-        //     'height' => '50px',
-        //     'width'  => '50px',
-        // ]);
-
+       
 
         $this->crud->addColumn([
             'name'      => 'image', // The db column name
@@ -164,12 +140,7 @@ class DriverCrudController extends CrudController
             'type'      => 'upload',
             'upload'    => true,
         ]);
-        // $this->crud-> addField([   // Upload
-        //     'name'      => 'bluebook',
-        //     'label'     => 'Bluebook',
-        //     'type'      => 'upload',
-        //     'upload'    => true,
-        // ]);
+       
       
 
 
