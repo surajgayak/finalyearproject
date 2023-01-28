@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Driversignup;
 use Illuminate\Http\Request;
+use App\Models\Upload;
 
 class DriversignupController extends Controller
 {
@@ -11,9 +12,8 @@ class DriversignupController extends Controller
     }
 
     public function createdriver(Request $request){
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-        ]);
+       
+        $vehicles =Upload::all();
         $driversignup = new Driversignup;
         $driversignup->fullname=$request['fullname'];
         $driversignup->contact=$request['contact'];
@@ -23,7 +23,6 @@ class DriversignupController extends Controller
         $driversignup->image=$request['photo']->store('uploadimages',$random.'.jpg');
         $driversignup->licence=$request['licence']->store('licence',$random.'.jpg');
         $driversignup->save(); 
-        $vehicles = \App\Models\Upload::all();
         return view('dashboard', compact('vehicles'));
 
     }

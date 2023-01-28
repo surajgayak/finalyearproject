@@ -10,9 +10,10 @@
 <body class="bg-blue-50">
     <x-app-layout>
     </x-app-layout>
-
         <h1 class="pt-32 text-4xl text-center font-bold"><<<span>Desc</span>ription >></h1>
         <br>
+        <form action="{{route('vehicledescs',$see->id)}}" method="post" >
+            @csrf
         <div class="seevehicle">
             <div class="miniseevehicle">
                 <img src="{{asset('storage/' . $see->image)}}">
@@ -29,12 +30,15 @@
                 <h1>Seat &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->seat)}}</h1>
             </div>
             <div class="descript">
-                {{ucfirst($see->description)}}
+                {{ucfirst($see->description)}}<br><br>
             </div>
+            <input type="submit" value="Book Now" class="bg-blue-500 rounded p-3 text-white ">
+
             </div>
             <hr>    
 
         </div>
+    </form>
 <x-footer>
 </x-footer>
 </body>

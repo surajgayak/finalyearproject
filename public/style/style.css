@@ -149,6 +149,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 10px;
+    gap: 10px;
 }
 .team .miniteam .pic1 {
     width: 350px;
@@ -204,11 +205,11 @@
 
 .mainsection {
     width: 100%;
-    min-width: 320px;
+    min-width: 400px;
     height: auto;
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
 }
@@ -238,21 +239,18 @@
 }
 .mainsection .desc {
     width: auto;
-    min-width: 320px;
+    min-width: 400px;
     height: auto;
     margin-left: 20px;
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
 }
 .mainsection .desc .desc1 {
     width: auto;
-    min-width: 400px;
+    min-width: auto;
     margin: 20px auto;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    /* gap: 30px; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
         rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 10px;
@@ -270,7 +268,7 @@
     background-size: cover;
 }
 .mainsection .desc .desc1 .imgdesc {
-    width: 500px;
+    width: 400px;
     height: auto;
     padding-top: 5px;
     padding-left: 10px;
@@ -315,8 +313,9 @@
     height: 100px;
     margin: 10px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     background-color: rgb(232, 232, 232);
+    gap: 15px;
 }
 .mainsection .latest .minilatest .imgsec img {
     width: 150px;
@@ -362,7 +361,17 @@ span {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+/* ..................SEARCH CONTENT PAGE........................ */
+.searchcontent {
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    border: 1px solid red;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 /* ..................CARD ABOUT SECTION................... */
 @import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,700);
 body {
@@ -576,11 +585,9 @@ svg .polygon {
     justify-content: center;
     gap: 10px;
     background-color: white;
-    /* align-items: center; */
     flex-wrap: wrap;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px;
-    /* rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 .booking .minibooking .book .img {
     width: 450px;
@@ -608,7 +615,7 @@ svg .polygon {
     margin-left: 20px;
     cursor: pointer;
 }
-/* ...............................VEHICLEDESC PAGE....................... */
+/* ...............................VEHICLEDESC PAGE................................ */
 
 .contain {
     width: 90%;
@@ -619,26 +626,25 @@ svg .polygon {
     padding-bottom: 20px;
 }
 
-.car-info {
+.contain .car-info {
     width: 70%;
     margin: 30px auto;
     display: flex;
     align-items: center;
     justify-content: start;
+    flex-wrap: wrap;
     gap: 40px;
     border-radius: 20px;
     overflow: hidden;
-    /* margin-bottom: 30px; */
-    /* border: 1px solid red; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.car-info img {
+.contain .car-info img {
     width: 60%;
     height: 400px;
 }
 
-.descriptionss {
+.contain .car-info .descriptionss {
     width: 30%;
     padding: 20px;
     font-size: 20px;
@@ -784,6 +790,7 @@ svg .polygon {
     height: auto;
     margin: 0 auto;
     flex-wrap: wrap;
+    position: relative;
 }
 .seevehicle hr {
     width: 80%;
@@ -798,16 +805,23 @@ svg .polygon {
 .miniseedesc .descript {
     width: 60%;
     padding-left: 30px;
+    height: auto;
 }
-.........................................................
-    */
-    @media
-    (max-width: 768px) {
-    .miniseevehicle {
+.miniseedesc input {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .seevehicle .miniseevehicle {
         width: 100%;
         height: 100px;
         margin: 0 auto;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .seevehicle .miniseevehicle img {
+        width: 100%;
     }
     .rentalservice {
         width: 100%;
@@ -827,7 +841,7 @@ svg .polygon {
         height: 100px;
     }
     .searchsection {
-        width: auto;
+        width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -870,8 +884,12 @@ svg .polygon {
     .car {
         display: none;
     }
+    .cardetail button {
+        display: none;
+    }
     .mainsection {
         flex-wrap: wrap;
+        width: 100%;
     }
 
     .mainsection .desc {
@@ -879,15 +897,10 @@ svg .polygon {
     }
     .mainsection .desc .desc1 {
         height: auto;
+        flex-wrap: wrap;
+        width: auto;
     }
-    .cardetail {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .cardetail button {
-        display: none;
-    }
+
     .description h1 {
         width: 100%;
         font-size: 25px;
@@ -897,8 +910,13 @@ svg .polygon {
         margin-top: 100px;
     }
     .mainsection .desc .desc1 .imgdesc {
-        height: auto;
-        padding-left: 10px;
+        width: 300px;
+    }
+    .mainsection .desc .desc1 .imgdesc h1 {
+        width: auto;
+    }
+    .mainsection .desc .desc1 .imgdesc h3 {
+        width: auto;
     }
     .mainsection .desc .desc1 .imgdesc .icons {
         flex-wrap: wrap;
@@ -908,10 +926,21 @@ svg .polygon {
         height: 200px;
         background-size: cover;
     }
+    .mainsection .desc .desc1 .imgdesc {
+        width: 400px;
+    }
     .mainsection .desc .desc1 .imgsrc img {
         width: 400px;
         height: 200px;
         background-size: cover;
+    }
+    .mainsection .desc .desc1 .imgdesc .icons {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .mainsection .latest {
+        margin-right: 0;
     }
     .about {
         text-align: center;
@@ -933,11 +962,45 @@ svg .polygon {
         padding-left: 5px;
     }
     .booking .minibooking .book .img {
-        width: 300px;
+        width: 250px;
         height: 150px;
     }
     .booking .minibooking .book .img img {
-        width: 300px;
+        width: 250px;
         height: 150px;
+    }
+    .car-info img {
+        width: 100%;
+        height: 400px;
+    }
+    .car-info {
+        width: 100%;
+    }
+
+    .team .miniteam {
+        width: 85%;
+        height: 300px;
+    }
+    .about {
+        padding-left: 30px;
+    }
+
+    .contain .car-info {
+        width: 100%;
+    }
+    .contain .car-info img {
+        width: 100%;
+    }
+    .contain .car-info .descriptionss {
+        width: 100%;
+    }
+
+    .contain .featuress {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .booking .minibooking .book {
+        width: 100%;
+        margin: 0;
     }
 }

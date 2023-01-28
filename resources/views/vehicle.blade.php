@@ -47,23 +47,23 @@
 
         <br>
     </div>
-{{--  --}}
     <br>
 
     {{-- LATEST vehicleicles --}}
     <div class="latest">
+        @foreach ($upcomes as $upcome)
+            
         <div class="minilatest">
             <div class="imgsec">
-                <img src="">
+                <img src="{{asset('storage/' . $upcome->image)}}">
             </div>
             <div class="textsection">
-                <h1>Lambo</h1>
-                <p>100/day</p>
+                <h1 class="text-xl">{{ucfirst($upcome->name)}}</h1>
+                <p>{{ucfirst($upcome->desc)}}</p>
                 
             </div>
-        </div>
-
-        
+        </div> 
+        @endforeach
     </div>
 </div>
 @endsection

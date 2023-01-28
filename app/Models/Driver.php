@@ -57,7 +57,7 @@ class Driver extends Model
         $attribute_name = "image";
         $disk = "public";
         $destination_path = "uploadimages";
-        $fileName = mt_rand(1111111,9999991) . '.jpg';
+        $fileName = mt_rand(1111111,9999999) . '.jpg';
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
 

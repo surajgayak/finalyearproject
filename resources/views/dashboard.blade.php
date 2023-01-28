@@ -26,7 +26,7 @@
 
         <form action="{{route('search')}}" method="post">
         @csrf
-        <div class="searchsection bg-amber-400  m-auto rounded-2xl flex justify-around items-center flex-wrap">
+        <div class="searchsection bg-amber-400  m-auto rounded-2xl flex justify-around items-center flex-wrap gap-1 ">
             <div class="pickup okk bg-white rounded-2xl ">
                 <input type="text" class=" rounded-2xl border-none  outline-none my-4 " name="pickup" placeholder=" Pick up a Location" required >
             </div>

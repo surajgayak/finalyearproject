@@ -39,6 +39,7 @@ class UpcommingCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        $this->crud->column('id');
         $this->crud->column('name');
         $this->crud->column('desc');
         $this->crud->addColumn([

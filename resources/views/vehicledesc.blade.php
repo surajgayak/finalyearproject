@@ -1,3 +1,6 @@
+<x-app-layout>
+</x-app-layout>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +11,9 @@
     <title>Document</title>
 </head>
 <body>
-    <x-app-layout>
-        
+    
+
+
     <div class="contain">
       <h2 class="text-4xl text-center p-5 font-bold"><span>Vehicle Details</span></h2>
     <form action="{{route('bookings',$veh->id)}}" method="post">
@@ -52,6 +56,5 @@
 
 
 
-    </x-app-layout>
 </body>
 </html>
