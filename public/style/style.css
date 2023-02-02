@@ -367,6 +367,13 @@ span {
     height: auto;
     padding: 40px;
     border: 1px solid red;
+    gap: 20px;
+}
+.searchcontent .holy {
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    border: 1px solid red;
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;

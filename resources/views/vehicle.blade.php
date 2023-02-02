@@ -27,7 +27,7 @@
             <div class="imgdesc">
                 <h1>{{ucfirst($veh->name)}}</h1>   
                 <p class="py-2">{{ucfirst($veh->description)}}</p>            
-                <h3 class="py-2">{{ucfirst($veh->price_day)}}/day</h3>
+                <h3 class="py-2">Rs. {{ucfirst($veh->price_day)}}/day</h3>
                 <div class="icons">
                     <div class="i1 i">
                         <i class="fa-solid fa-user"></i> &nbsp {{$veh->seat}} Seat

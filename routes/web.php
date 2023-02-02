@@ -30,6 +30,8 @@ Route::post('/bookings/{id}',[BookingController::class,'bookings'])->name('booki
 Route::post('/deletebooking/{id}',[BookingController::class,'deletebooking'])->name('deletebooking');
 Route::get('/seevehicle/{id}',[SeevehicleController::class,'seevehicle'])->name('seevehicle');
 
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
 
 

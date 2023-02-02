@@ -18,7 +18,7 @@ class ContactController extends Controller
         $info->contact=$request['contact'];
         $info->message=$request['message'];
         $info->save();
-        return redirect('contact');
+        return redirect('contact')->with('status','Enquiry has been send');
 
     }
 }

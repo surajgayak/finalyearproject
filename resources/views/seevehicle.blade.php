@@ -23,7 +23,7 @@
             <div class="miniseedesc text-xl text-gray-500">
                 <div class="text">
                 <h1>Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <b>{{ucfirst($see->name)}}</b></h1><br>
-                <h1>Price/day&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->price_day)}}</h1><br>
+                <h1>Price/day&nbsp&nbsp&nbsp&nbsp: Rs. {{ucfirst($see->price_day)}}</h1><br>
                 <h1>Engine &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->engine)}}</h1><br>
                 <h1>Model &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->model)}}</h1><br>
                 <h1>Fuel &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: {{ucfirst($see->engine)}}</h1><br>

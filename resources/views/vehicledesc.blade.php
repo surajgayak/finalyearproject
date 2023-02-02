@@ -23,7 +23,7 @@
         <div class="descriptionss">
           <h1 class="font-bold text-4xl">{{ucfirst($veh->name)}}</h1>
           <br>
-          <p>Price/Day : {{$veh->price_day}}</p>
+          <p>Price/Day :Rs.{{$veh->price_day}}</p>
           <p>Seat : {{$veh->seat}}</p>
           <p>Engine : {{ucfirst($veh->engine)}}</p>
           <p>Fuel : {{ucfirst($veh->engine)}}</p>

@@ -34,7 +34,7 @@
                     @csrf
                 <div class="book">
                     <div class="img">
-                        <img src="{{asset('storage/' . $boo->image)}}">
+                        <img src="{{asset('./storage/' . $boo->image)}}" alt="Car Img">
                     </div>
                     <div class="text">
                         <h1 class="font-bold text-3xl">{{ucfirst($boo->name)}}</h1>

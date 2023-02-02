@@ -18,7 +18,7 @@ class DriversignupController extends Controller
         $driversignup->fullname=$request['fullname'];
         $driversignup->contact=$request['contact'];
         $driversignup->email=$request['email'];
-        $driversignup->password=md5($request['password']);
+        $driversignup->password=$request['password'];
         $random = mt_rand(10000000,99999999);
         $driversignup->image=$request['photo']->store('uploadimages',$random.'.jpg');
         $driversignup->licence=$request['licence']->store('licence',$random.'.jpg');

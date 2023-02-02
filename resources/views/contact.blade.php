@@ -1,11 +1,18 @@
 @extends('components.boilerplate')
 
 @section('content')
-{{-- <h1 class='pt-24'>this is the hello contact section </h1> --}}
-<!-- Container for demo purpose -->
-<div class="container pt-36 px-6 mx-auto">
 
-    <!-- Section: Design Block -->
+<div class="container pt-36 px-6 mx-auto">
+  @if (session()->has('status'))
+      
+    <div class="  text-center text-white alert bg-green-400 rounded-lg py-5 px-6  text-4xl" role="alert">
+        {{session('status')}}
+        <button type="button" class="btn-close box-content w-4 h-4 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+@endif
+<br>
+
     <section class="mb-32 text-gray-800">
       <div class="flex justify-center">
         <div class="text-center lg:max-w-3xl md:max-w-xl">

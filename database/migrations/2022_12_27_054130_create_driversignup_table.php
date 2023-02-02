@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('fullname');
             $table->string('contact')->unique();
             $table->string('email')->unique();
-            $table->string(bcrypt('password'));
+            $table->string('password');
             $table->string('image');
             $table->string('licence');
             $table->timestamps();
