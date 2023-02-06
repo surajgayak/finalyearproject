@@ -26,6 +26,7 @@ class DriverRequest extends FormRequest
     {
         return [
             // 'name' => 'required|min:5|max:255'
+            'contact'=>'required|numeric|size:10'
         ];
     }
 
@@ -49,7 +50,7 @@ class DriverRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'size' => "The :attribute must have 10 digits."
         ];
     }
 }

@@ -34,7 +34,9 @@ class Booking extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
@@ -52,13 +54,4 @@ class Booking extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
-
-    public function setImageAttribute($value){
-        $attribute_name="image";
-        $disk="public";
-        $destination_path="uploadimages";
-        $fileName=mt_rand('3333','6666').'.jpg';
-        $this->uploadFileToDisk($value,$attribute_name,$disk,$destination_path,$fileName);
-        
-    }
 }

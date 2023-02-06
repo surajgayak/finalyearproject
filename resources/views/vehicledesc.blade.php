@@ -28,7 +28,8 @@
           <p>Engine : {{ucfirst($veh->engine)}}</p>
           <p>Fuel : {{ucfirst($veh->engine)}}</p>
           <p>Model : {{ucfirst($veh->model)}}</p>
-          <input type="date" class="mt-3" name="date"required>
+          <input type="date" class="mt-3" name="date" min="{{\Carbon\Carbon::tomorrow()->format('Y-m-d') }}"
+          required>
           <input type="time" class="mt-2" name="time" required>
           <input type="text" placeholder="pickup Location" class="mt-2" name="location" required>
           <br>

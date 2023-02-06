@@ -373,7 +373,6 @@ span {
     width: 100%;
     height: auto;
     padding: 40px;
-    border: 1px solid red;
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;

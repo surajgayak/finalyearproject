@@ -49,6 +49,13 @@
             </div>
 
             <!-- Settings Dropdown -->
+            @auth
+                <form class="mt-5" action="{{ route('logout') }}" method="post">
+                @csrf
+                <button type="submit" class="bg-red-600 px-5 py-3 text-white rounded">Logout</button>
+                </form>
+            @endauth
+            @guest    
             <div class="hidden sm:flex sm:items-center sm:ml-6 ">
                 <a href="{{route('login')}}">
                 <button class="bg-blue-600 px-5 py-3 text-white rounded">Login</button>
@@ -58,6 +65,7 @@
                 <button>Register</button>
                 </a>
              </div>
+            @endguest
 
             <!-- Hamburger -->
             <div class=" flex items-center sm:hidden">

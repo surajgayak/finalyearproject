@@ -13,18 +13,16 @@ class DriversignupController extends Controller
 
     public function createdriver(Request $request){
        
-        $vehicles =Upload::all();
         $driversignup = new Driversignup;
         $driversignup->fullname=$request['fullname'];
         $driversignup->contact=$request['contact'];
         $driversignup->email=$request['email'];
         $driversignup->password=$request['password'];
-        $random = mt_rand(10000000,99999999);
-        $driversignup->image=$request['photo']->store('uploadimages',$random.'.jpg');
-        $driversignup->licence=$request['licence']->store('licence',$random.'.jpg');
+        $driversignup->image=$request->file('photo')->store('uploadimages', 'public');
+        $driversignup->licence=$request->file('licence')->store('uploadimages', 'public');
         $driversignup->save(); 
-        return view('dashboard', compact('vehicles'));
-
+        
+        return redirect('/');
     }
     
 }

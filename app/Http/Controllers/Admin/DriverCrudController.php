@@ -41,6 +41,7 @@ class DriverCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+       
         $this->crud->column('id');
         $this->crud->column('fullname');
         $this->crud->column('contact');
@@ -51,9 +52,7 @@ class DriverCrudController extends CrudController
             'label'     => 'Licence', // Table column heading
             'type'      => 'image',
             'prefix' => 'storage/',
-            // image from a different disk (like s3 bucket)
-            // 'disk'   => 'disk-name', 
-            // optional width/height if 25px is not ok with you
+          
             'height' => '50px',
             'width'  => '50px',
         ]);

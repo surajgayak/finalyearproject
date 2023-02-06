@@ -40,6 +40,9 @@ class BookingCrudController extends CrudController
     protected function setupListOperation()
     {
          $this->crud->column('id');
+         $this->crud->column('name');
+         $this->crud->column('user');
+
        $this->crud->column('name');
        $this->crud->column('date');
        $this->crud->column('time');
@@ -75,8 +78,30 @@ class BookingCrudController extends CrudController
     {
         CRUD::setValidation(BookingRequest::class);
 
-        
+        $this->crud->addField([
+            'name' => 'name'
+        ]);
 
+        $this->crud->addField([
+            'name' => 'date'
+        ]);
+        
+        $this->crud->addField([
+            'name' => 'time'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'location'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'user_id'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'image',
+            'type' => 'upload'
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

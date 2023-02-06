@@ -23,7 +23,7 @@ Route::get('/vehicledesc',[VehicledescController::class,'vehicledesc'])->name('v
 Route::post('/search',[SearchController::class,'search'])->name('search');
 Route::get('/service',[ServiceController::class,'service'])->name('service');
 Route::get('/booking',[BookingController::class,'booking'])->name('booking');
-Route::post('/vehicledescs/{id}',[VehicledescController::class,'vehicledescs'])->name('vehicledescs');
+Route::post('/vehicledescs/{id}',[VehicledescController::class,'vehicledescs'])->middleware('auth')->name('vehicledescs');
 Route::get('/contact',[ContactController::class,'contact'])->name('contact');
 Route::post('/enquirycontact',[ContactController::class,'enquirycontact'])->name('enquirycontact');
 Route::post('/bookings/{id}',[BookingController::class,'bookings'])->name('bookings');
@@ -36,7 +36,7 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
