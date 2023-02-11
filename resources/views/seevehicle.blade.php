@@ -32,8 +32,22 @@
             <div class="descript">
                 {{ucfirst($see->description)}}<br><br>
             </div>
-            <input type="submit" value="Book Now" class="bg-blue-500 rounded p-3 text-white ">
-
+            {{--  --}}
+            
+            @if(count($bok) > 0)
+            @foreach ($bok as $books)
+                @if($books->status == $see->id)
+                    <!-- If the vehicle is booked, disable the submit button -->
+                    <input type="submit" value="Booked" disabled class="text-white bg-blue-300 rounded p-2 mt-3 cursor-pointer">
+                    @break
+                @endif
+            @endforeach
+            @if($books->status != $see->id)
+                <!-- If the vehicle is available, enable the submit button -->
+                <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer">
+            @endif
+        @endif
+{{--  --}}
             </div>
             <hr>    
 

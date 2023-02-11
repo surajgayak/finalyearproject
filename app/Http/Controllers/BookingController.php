@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Upload;
 use App\Models\Booking;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -22,6 +23,7 @@ class BookingController extends Controller
         $books->time=$request['time'];
         $books->location=$request['location'];
         $books->image=$veh->image;
+        $books->status=$veh->id;
         $books->save();
         return redirect()->route('booking');
       

@@ -26,6 +26,9 @@ class EnquiriesRequest extends FormRequest
     {
         return [
             // 'name' => 'required|min:5|max:255'
+            'name' => 'required|regex:/^[\pL\s]+$/u',
+            'contact'=>'required|numeric|size:10',
+            
         ];
     }
 

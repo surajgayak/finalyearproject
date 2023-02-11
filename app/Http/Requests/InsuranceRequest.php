@@ -26,6 +26,9 @@ class InsuranceRequest extends FormRequest
     {
         return [
             // 'name' => 'required|min:5|max:255'
+            'model'=>'required|numeric',
+            'insurance_num'=>'required|numeric',
+            'bluebook' => 'required|image',
         ];
     }
 

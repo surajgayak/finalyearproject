@@ -20,8 +20,7 @@ class DriversignupController extends Controller
         $driversignup->password=$request['password'];
         $driversignup->image=$request->file('photo')->store('uploadimages', 'public');
         $driversignup->licence=$request->file('licence')->store('uploadimages', 'public');
-        $driversignup->save(); 
-        
+        $driversignup->save();   
         return redirect('/');
     }
     

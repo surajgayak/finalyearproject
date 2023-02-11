@@ -39,7 +39,7 @@ class InsuranceCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
+        $this->crud->column('id');
         $this->crud->column('name');
         $this->crud->column('model');
         $this->crud->column('insurance_num');

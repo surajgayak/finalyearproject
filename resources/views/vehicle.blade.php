@@ -37,8 +37,24 @@
                     <div class="i3 i"><i class="fa-regular fa-calendar-days"></i>&nbsp {{$veh->model}} Model</div>
                 </div>
                 
-                {{-- <a href="}}"><button class="text-white bg-blue-500 rounded p-2" >Book Now</button></a> --}}
-                <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer">
+                
+
+                @if(count($bok) > 0)
+                @foreach ($bok as $books)
+                    @if($books->status == $veh->id)
+                        <!-- If the vehicle is booked, disable the submit button -->
+                        <input type="submit" value="Booked" disabled class="text-white bg-blue-300 rounded p-2 mt-3 cursor-pointer">
+                        @break
+                    @endif
+                @endforeach
+                @if($books->status != $veh->id)
+                    <!-- If the vehicle is available, enable the submit button -->
+                    <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer">
+                @endif
+            @endif
+            
+
+               
             </div>
 
         </div>
