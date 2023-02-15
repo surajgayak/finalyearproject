@@ -6,6 +6,7 @@ use App\Models\Booking;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
+
 class BookingController extends Controller
 {
     public function booking(Request $request){
@@ -19,13 +20,14 @@ class BookingController extends Controller
         $books=new Booking;
         $books->name=$veh->name;
         $books->date=$request['date'];
+        $books->dropdate=$request['dropdate'];
         $books->user_id=auth()->user()->id;
         $books->time=$request['time'];
         $books->location=$request['location'];
         $books->image=$veh->image;
         $books->status=$veh->id;
         $books->save();
-        return redirect()->route('booking');
+        return redirect()->route('booking')->with('status','Booking has been added !!!');;
       
     }
     public function deletebooking($id){

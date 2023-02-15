@@ -28,15 +28,54 @@
           <p>Engine : {{ucfirst($veh->engine)}}</p>
           <p>Fuel : {{ucfirst($veh->engine)}}</p>
           <p>Model : {{ucfirst($veh->model)}}</p>
+          {{-- Pickup Date
           <input type="date" class="mt-3" name="date" min="{{\Carbon\Carbon::tomorrow()->format('Y-m-d') }}"
           required>
+          <br>
+          Drop Date
+          <input type="date" class="mt-3" name="dropdate" min="{{\Carbon\Carbon::tomorrow()->format('Y-m-d') }}"
+          required> --}}
+          @php
+          $user_id = Auth::id(); // get the ID of the currently logged-in user
+          $books_for_user = $bok->where('user_id', $user_id); // filter the $bok collection to find books for the current user
+        @endphp
+        
+        @if ($books_for_user->count() > 0)
+          @foreach ($books_for_user as $book)
+            {{-- {{ $book->dropdate }} --}}
+          @endforeach
+        @else
+          {{-- <p>No books found for current user.</p> --}}
+        @endif
+        
+
+      
+              <br>
+              <label for="pickup-date">Pickup Date</label>
+              @php
+                  $min_dropdate = $bok->min('dropdate');
+                  $formatted_min_dropdate = \Carbon\Carbon::createFromFormat('Y-m-d', $min_dropdate)->addDay()->format('Y-m-d');
+                      
+                  foreach ($bok as $book) {
+                      $book->min_dropdate = $formatted_min_dropdate;
+                  }
+              @endphp
+              
+              <input type="date" class="mt-3" name="date" min="{{ $bok->first()->min_dropdate }}" required>
+              <br>
+          <label for="drop-date">Drop Date</label>
+          <input type="date" class="dropdate" name="dropdate" min="{{$bok->first()->min_dropdate }}" required>
+
           <input type="time" class="mt-2" name="time" required>
           <input type="text" placeholder="pickup Location" class="mt-2" name="location" required>
           <br>
           <input type="submit" class="rent-btn" value="Confirmed">
         </div>
+
+    
       </div>
     </form>
+
       <hr>
       <div class="featuress">
         <div class="feat">

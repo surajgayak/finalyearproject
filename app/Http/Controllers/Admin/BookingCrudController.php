@@ -45,6 +45,7 @@ class BookingCrudController extends CrudController
 
        $this->crud->column('name');
        $this->crud->column('date');
+       $this->crud->column('dropdate');
        $this->crud->column('time');
        $this->crud->column('location');
        $this->crud->column('status');

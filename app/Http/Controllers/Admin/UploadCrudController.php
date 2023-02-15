@@ -96,7 +96,7 @@ class UploadCrudController extends CrudController
         
         $this->crud->field('name');
         $this->crud->field('brand');
-        $this->crud->field('price/day');
+        $this->crud->field('price_day');
         $this->crud->field('seat');
         $this->crud->field('engine');
         $this->crud->field('model');

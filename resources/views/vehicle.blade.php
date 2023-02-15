@@ -39,22 +39,75 @@
                 
                 
 
-                @if(count($bok) > 0)
+                {{-- <input type="submit" value="Book Now"  class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer"> --}}
+
+                {{-- @if(count($bok) > 0)
                 @foreach ($bok as $books)
                     @if($books->status == $veh->id)
-                        <!-- If the vehicle is booked, disable the submit button -->
-                        <input type="submit" value="Booked" disabled class="text-white bg-blue-300 rounded p-2 mt-3 cursor-pointer">
-                        @break
+                    @if($books->user_id == Auth::check() && Auth::user()->id)
+                    <!-- If the vehicle is booked by the current user, show the "Booked" button -->
+                    <input type="submit" value="Booked" disabled class="text-white bg-blue-300 rounded p-2 mt-3 cursor-pointer">
+                @endif
+                @break
                     @endif
                 @endforeach
+
                 @if($books->status != $veh->id)
                     <!-- If the vehicle is available, enable the submit button -->
                     <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer">
                 @endif
             @endif
-            
+             --}}
 
-               
+             
+
+
+          
+{{--             
+                @if (count($bok) > 0)
+                @foreach ($bok as $book)
+                    @if ($book->status == $veh->id)
+                        @if (Auth::check() && $book->user_id == Auth::user()->id)
+                            <!-- If the vehicle is booked by the current user, show the "Booked" button -->
+                            <input type="submit" value="Booked" disabled class="text-white bg-blue-300 rounded p-2 mt-3 cursor-pointer">
+                        @endif
+                        @break
+                    @endif
+
+                    @if ($loop->last)
+                        <!-- If we reached the end of the loop and the vehicle is not booked, show the "Book Now" button -->
+                        <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 mt-3 cursor-pointer">
+                    @endif
+                @endforeach
+            @else
+                <!-- If there are no bookings, show the "Book Now" button -->
+                <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer">
+            @endif --}}
+            @php
+            $booked = false;
+        @endphp
+        
+        @foreach ($bok as $book)
+            @if ($book->status == $veh->id)
+                @if (Auth::check() && $book->user_id == Auth::user()->id)
+                    <!-- If the vehicle is booked by the current user, show the "Booked" button -->
+                    <input type="submit" value="Booked" disabled class="text-white bg-blue-300 rounded p-2 mt-3 cursor-pointer">
+                    @php
+                        $booked = true;
+                    @endphp
+                @else
+                    <!-- If the vehicle is booked by another user, show a message -->
+                    {{-- <p class="mt-3 text-gray-300">This vehicle is currently booked by another user but if you want to book you can. </p> --}}
+                @endif
+            @endif
+        @endforeach
+        
+        @if (!$booked)
+            <!-- If the vehicle is available, display the "Book Now" button -->
+            <input type="submit" value="Book Now" class="text-white bg-blue-500 rounded p-2 mt-3 cursor-pointer">
+        @endif
+        
+
             </div>
 
         </div>

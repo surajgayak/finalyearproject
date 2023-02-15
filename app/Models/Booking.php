@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
+
     use CrudTrait;
 
     /*
@@ -40,6 +41,9 @@ class Booking extends Model
     public function vehicle() {
         return $this->belongsTo(Vehicle::class);
     }
+
+    protected $dateFormat = 'Y-m-d';
+
 
     /*
     |--------------------------------------------------------------------------

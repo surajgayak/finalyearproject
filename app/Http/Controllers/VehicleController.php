@@ -5,6 +5,8 @@ use App\Models\Upcomming;
 use App\Models\Booking;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class VehicleController extends Controller
