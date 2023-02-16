@@ -15,7 +15,16 @@ return [
 
     'paths' => [
         resource_path('views'),
+
     ],
+
+    'namespaces' => [
+        'backpack' => base_path('resources/views/vendor/backpack'),
+    
+        // other namespaces may be defined here
+    ],
+    
+
 
     /*
     |--------------------------------------------------------------------------
@@ -32,5 +41,7 @@ return [
         'VIEW_COMPILED_PATH',
         realpath(storage_path('framework/views'))
     ),
+
+
 
 ];
