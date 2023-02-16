@@ -11,6 +11,8 @@ use App\Http\Controllers\VehicledescController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SeevehicleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChartController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -29,11 +31,12 @@ Route::post('/enquirycontact',[ContactController::class,'enquirycontact'])->name
 Route::post('/bookings/{id}',[BookingController::class,'bookings'])->name('bookings');
 Route::post('/deletebooking/{id}',[BookingController::class,'deletebooking'])->name('deletebooking');
 Route::get('/seevehicle/{id}',[SeevehicleController::class,'seevehicle'])->name('seevehicle');
+Route::get('/chart',[ChartController::class,'barchart'])->name('barchart');
 
 
 
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+
+
 
 
 

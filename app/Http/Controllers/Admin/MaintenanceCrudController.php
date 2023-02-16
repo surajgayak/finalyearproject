@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UploadRequest;
+use App\Http\Requests\MaintenanceRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class UploadCrudController
+ * Class MaintenanceCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class UploadCrudController extends CrudController
+class MaintenanceCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class UploadCrudController extends CrudController
      */
     public function setup()
     {
-        $this->crud->setModel(\App\Models\Upload::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/upload');
-        $this->crud->setEntityNameStrings('upload', 'uploads');
+        $this->crud->setModel(\App\Models\Maintenance::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/maintenance');
+        $this->crud->setEntityNameStrings('maintenance', 'maintenances');
     }
 
     /**
@@ -40,13 +40,10 @@ class UploadCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->column('id');
-        $this->crud->column('name');
-        $this->crud->column('brand');
-        $this->crud->column('price_day');
-        $this->crud->column('seat');
-        $this->crud->column('engine');
-        $this->crud->column('model');
-        $this->crud->column('description');
+        $this->crud->column('vehicle_name');
+        $this->crud->column('distance_travel');
+        $this->crud->column('maintenance_fee');
+        $this->crud->column('reviews');
         $this->crud->addColumn([
             'name'      => 'image', // The db column name
             'label'     => 'Image', // Table column heading
@@ -58,14 +55,14 @@ class UploadCrudController extends CrudController
             'height' => '100px',
             'width'  => '100px',
         ]);
+        
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
-         * - $this->crud->column('price')->type('number');
-         * - $this->crud->addColumn(['name' => 'price', 'type' => 'number']); 
+         * - CRUD::column('price')->type('number');
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
     }
-
     public function setupShowOperation()
     {
         $this->setupListOperation();
@@ -91,14 +88,11 @@ class UploadCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(UploadRequest::class);
-        $this->crud->field('name');
-        $this->crud->field('brand');
-        $this->crud->field('price_day');
-        $this->crud->field('seat');
-        $this->crud->field('engine');
-        $this->crud->field('model');
-        $this->crud->field('description');
+        $this->crud->setValidation(MaintenanceRequest::class);
+        $this->crud->field('vehicle_name');
+        $this->crud->field('distance_travel');
+        $this->crud->field('maintenance_fee');
+        $this->crud->field('reviews');
         $this->crud->addField([   // Upload
             'name'      => 'image',
             'label'     => 'Image',
@@ -107,12 +101,16 @@ class UploadCrudController extends CrudController
         ]);
 
 
+        
+
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - $this->crud->field('price')->type('number');
-         * - $this->crud->addField(['name' => 'price', 'type' => 'number'])); 
+         * - CRUD::field('price')->type('number');
+         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
+
+    
 
     /**
      * Define what happens when the Update operation is loaded.

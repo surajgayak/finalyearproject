@@ -35,6 +35,13 @@
           Drop Date
           <input type="date" class="mt-3" name="dropdate" min="{{\Carbon\Carbon::tomorrow()->format('Y-m-d') }}"
           required> --}}
+        
+            Pickup Date
+            <input type="date" class="mt-3" name="pickup_date" min="{{ $pickup_date }}" required>
+            <br>
+            Drop Date
+            <input type="date" class="mt-3" name="drop_date" min="{{ $min_dropdate }}" required>
+
           @php
           $user_id = Auth::id(); // get the ID of the currently logged-in user
           $books_for_user = $bok->where('user_id', $user_id); // filter the $bok collection to find books for the current user
@@ -51,21 +58,30 @@
 
       
               <br>
-              <label for="pickup-date">Pickup Date</label>
-              @php
-                  $min_dropdate = $bok->min('dropdate');
-                  $formatted_min_dropdate = \Carbon\Carbon::createFromFormat('Y-m-d', $min_dropdate)->addDay()->format('Y-m-d');
-                      
-                  foreach ($bok as $book) {
-                      $book->min_dropdate = $formatted_min_dropdate;
-                  }
-              @endphp
-              
-              <input type="date" class="mt-3" name="date" min="{{ $bok->first()->min_dropdate }}" required>
-              <br>
+                    {{-- @php
+          // get the most recent booking
+          $last_booking = \App\Models\Booking::orderBy('id', 'desc')->first();
+
+          // get the drop date of the most recent booking, if available
+          $last_dropdate = $last_booking ? $last_booking->dropdate : null;
+
+          // set the pickup date of the new booking to be the same as the previous booking's drop date, if available
+          $pickup_date = $last_dropdate ?? \Carbon\Carbon::parse('default pickup date');
+
+          // set the minimum drop date for all bookings to be the pickup date of the new booking
+          $min_dropdate = $pickup_date->addDay()->format('Y-m-d');
+
+          foreach ($bok as $book) {
+              $book->min_dropdate = $min_dropdate;
+              $book->pickup_date = $pickup_date;
+          }
+      @endphp
+
+      <input type="date" class="mt-3" name="date" value="{{ $pickup_date->format('Y-m-d') }}" min="{{ $min_dropdate }}" required>
+
           <label for="drop-date">Drop Date</label>
           <input type="date" class="dropdate" name="dropdate" min="{{$bok->first()->min_dropdate }}" required>
-
+ --}}
           <input type="time" class="mt-2" name="time" required>
           <input type="text" placeholder="pickup Location" class="mt-2" name="location" required>
           <br>
