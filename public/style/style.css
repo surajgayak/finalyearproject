@@ -97,7 +97,7 @@
 /* ....................RENTAL SERVICE................. */
 .rentalservice {
     width: 100%;
-    height: 550px;
+    height: 600px;
     background-color: #f2f5ff;
     position: relative;
     padding: 20px;
@@ -129,7 +129,7 @@
     background-repeat: no-repeat;
     box-shadow: 10px -10px #5a77fa;
 }
-/* ........................team............................... */
+/* ........................TEAM............................... */
 .team {
     width: 100%;
     height: auto;
@@ -377,6 +377,34 @@ span {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+/*...................... REVIEW SECTION................ */
+
+.review {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.review .rev {
+    width: 450px;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.review .rev h2 {
+    font-size: 16px;
+    color: gray;
+}
+.review .rev img {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    border-radius: 50px;
 }
 /* ..................CARD ABOUT SECTION................... */
 @import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,700);
@@ -714,19 +742,24 @@ svg .polygon {
 /* ..........................DASHBOARD CONTENT......................... */
 .dashboardcontent {
     width: 100%;
-    height: 1000px;
-    border: 1px solid blue;
+    height: auto;
+}
+.dashboardcontent .charts {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
 }
 .dashboardcontent .widgets {
     width: 100%;
     height: auto;
-    display: flex;
+    display: inline-flex;
     justify-content: start;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 30px;
-    border: 1px solid red;
 }
 .dashboardcontent .widgets .one {
     width: 300px;
@@ -735,32 +768,47 @@ svg .polygon {
     border-radius: 10px;
 }
 .dashboardcontent .widgets .one p {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
 }
-.dashboardcontent .chart {
-    width: 100%;
-    height: 300px;
-    border: 2px solid red;
-    color: black;
-}
+
 .dashboardcontent .widgets .u {
-    background-color: #fa5555;
+    background-color: #308aff;
 }
 .dashboardcontent .widgets .v {
-    background-color: #8f55fa;
+    background-color: #fa5555;
 }
 .dashboardcontent .widgets .i {
-    background-color: #5df5a4;
+    background-color: #ffbd30;
 }
 .dashboardcontent .widgets .e {
-    background-color: #d75df5;
+    background-color: #b14bfa;
 }
-.dashboardcontent .widgets .d {
-    background-color: #7b55fa;
+.dashboardcontent .widgets .ins {
+    background-color: #00d8db;
 }
 .dashboardcontent .widgets .inc {
-    background-color: #5a92fa;
+    background-color: #8aff8a;
+}
+.dashboardcontent .widgets .maintain {
+    background-color: #ff70f5;
+}
+.dashboardcontent .widgets .rent {
+    background-color: #00a10b;
+}
+
+.dashboardcontent .incomes {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+.dashboardcontent .incomes .inc {
+    width: 300px;
+    height: 130px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
 }
 /* ...................See vehicle........... */
 

@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\MaintenanceRequest;
+use App\Http\Requests\RentalRequestRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class MaintenanceCrudController
+ * Class RentalRequestCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class MaintenanceCrudController extends CrudController
+class RentalRequestCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class MaintenanceCrudController extends CrudController
      */
     public function setup()
     {
-        $this->crud->setModel(\App\Models\Maintenance::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/maintenance');
-        $this->crud->setEntityNameStrings('maintenance', 'maintenances');
+        $this->crud->setModel(\App\Models\RentalRequest::class);
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/rental-request');
+        $this->crud->setEntityNameStrings('rental request', 'rental requests');
     }
 
     /**
@@ -39,23 +39,39 @@ class MaintenanceCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        
         $this->crud->column('id');
-        $this->crud->column('vehicle_name');
-        $this->crud->column('distance_travel');
-        $this->crud->column('maintenance_fee');
-        $this->crud->column('review');
+        $this->crud->column('username');
+        $this->crud->column('email');
+        $this->crud->column('contact');
+        $this->crud->column('carname');
+        $this->crud->column('model');
         $this->crud->addColumn([
-            'name'      => 'image', // The db column name
-            'label'     => 'Image', // Table column heading
-            'type'      => 'image',
+            'name'=>'carphoto',
+            'label'=>'Carphoto',
+            'type'=>'image',
             'prefix' => 'storage/',
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
             'height' => '100px',
             'width'  => '100px',
+            
         ]);
-        
+
+        $this->crud->addColumn([
+            'name'=>'bluebookphoto',
+            'label'=>'Bluebookphoto',
+            'type'=>'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '100px',
+            'width'  => '100px',
+            
+        ]);
+
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -63,13 +79,26 @@ class MaintenanceCrudController extends CrudController
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
     }
+
     public function setupShowOperation()
     {
         $this->setupListOperation();
-        $this->crud->removeColumn('image');
+        $this->crud->removeColumn('carphoto');
+        $this->crud->removeColumn('bluebook');
         $this->crud->addColumn([
             'name'      => 'image', // The db column ndriverPame
-            'label'     => 'Image', // Table column heading
+            'label'     => 'carphoto', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '100px',
+            'width'  => '100px',
+        ]);
+        $this->crud->addColumn([
+            'name'      => 'image', // The db column ndriverPame
+            'label'     => 'bluebookphoto', // Table column heading
             'type'      => 'image',
             'prefix' => 'storage/',
             // image from a different disk (like s3 bucket)
@@ -79,7 +108,6 @@ class MaintenanceCrudController extends CrudController
             'width'  => '100px',
         ]);
     }
-
     /**
      * Define what happens when the Create operation is loaded.
      * 
@@ -88,18 +116,25 @@ class MaintenanceCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(MaintenanceRequest::class);
-        $this->crud->field('vehicle_name');
-        $this->crud->field('distance_travel');
-        $this->crud->field('maintenance_fee');
-        $this->crud->field('review');
+        $this->crud->setValidation(RentalRequestRequest::class);
+        
+        $this->crud->field('username');
+        $this->crud->field('email');
+        $this->crud->field('contact');
+        $this->crud->field('carname');
+        $this->crud->field('model');
         $this->crud->addField([   // Upload
-            'name'      => 'image',
-            'label'     => 'Image',
+            'name'      => 'carphoto',
+            'label'     => 'Carphoto',
             'type'      => 'upload',
             'upload'    => true,
         ]);
-
+        $this->crud->addField([   // Upload
+            'name'      => 'bluebookphoto',
+            'label'     => 'Bluebook',
+            'type'      => 'upload',
+            'upload'    => true,
+        ]);
 
         
 
@@ -109,8 +144,6 @@ class MaintenanceCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
-
-    
 
     /**
      * Define what happens when the Update operation is loaded.

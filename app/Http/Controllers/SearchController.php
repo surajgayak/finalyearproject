@@ -20,6 +20,7 @@ class SearchController extends Controller
         elseif($time)
         $query->where('time', 'like', '%'.$time.'%');    
         $results = $query->get();
+
    
         return view('search-result', compact('results'));
     }

@@ -42,7 +42,7 @@ class Booking extends Model
         return $this->belongsTo(Vehicle::class);
     }
 
-    protected $dateFormat = 'Y-m-d';
+protected $dateFormat = 'Y-m-d';
 
 
     /*

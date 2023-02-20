@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Maintenance extends Model
+class RentalRequest extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Maintenance extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'maintenances';
+    protected $table = 'rentvehicles';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -53,14 +53,22 @@ class Maintenance extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function setImageAttribute($value)
-    {
-        $attribute_name = "image";
-        $disk = "public";
-        $destination_path = "uploadimages";
-        $fileName = mt_rand(10000000,99999999). '.jpg';
+ 
 
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
+
+    public function setCarphotoAttribute($value){
+        $attribute_name="carphoto";
+        $disk="public";
+        $destination_path="uploadimages";
+        $filename=mt_rand(10000,99999).'.jpg';
+        $this->uploadFileToDisk($value,$attribute_name,$disk,$destination_path,$filename);
     }
 
+    public function setBluebookphotoAttribute($value){
+        $attribute_name="bluebookphoto";
+        $disk="public";
+        $destination_path="uploadimages";
+        $filename=mt_rand(10000,99999).'.jpg';
+        $this->uploadFileToDisk($value,$attribute_name,$disk,$destination_path,$filename);
+    }
 }

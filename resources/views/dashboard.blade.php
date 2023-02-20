@@ -13,8 +13,24 @@
       />
         @vite('resources/css/app.css') 
         <title>Document</title>
+                    
+            <script>
+                function removeAlert(alertElement) {
+                    alertElement.remove();
+                }
+                </script>
     </head>
     <body>
+
+         @if (session()->has('status')){
+      
+        <div class=" relative mt-24  mb-5 text-center w-6/12 m-auto text-sm text-white alert bg-green-400 rounded-lg py-5 px-6 " role="alert">
+            {{session('status')}}
+            <button class="absolute right-5 top-3 text-2xl font-bold text-black" onclick="removeAlert(this.parentNode)">x</button>
+          </div>
+        }
+    @endif
+
         {{-- .......................HERO SECTION STARTS ..................................--}}
        <div class="hero bg-fixed">
         <div class="textdiv text-white text-center pt-48">
@@ -84,6 +100,9 @@
                     Users are able to see the vehicle ,see the description like no. of seat,price per day/trip,
                     vehicle brand,engine ,drivers and the many more.
                 </p>
+                <a href="{{route('rentvehicle')}}">
+                <button class="p-3 bg-red-500 rounded text-center text-white text-xl my-5">Give vehicle to rent <i class="fa-solid fa-arrow-right"></i></button>
+            </a>
             </div>
             <div class="img mini">
                 <img src="/images/audi.jpg">
@@ -129,6 +148,27 @@
     <div class="car  ">
       <img src="images/remove.png">
     </div>
+  </div>
+  
+  <div class="review">
+    <div class="one rev">
+        <img src="{{asset('images/utm.png')}}" alt=""> <span class="pl-5  text-xl text-black">Ramesh Shrestha</span>
+        <br><br>
+        <h2 class="text-gray-500 ">"I have been using this service and i have got a very fruitful result."</h2>
+
+
+    </div>
+    <div class="two rev">
+        <img src="{{asset('images/sur.png')}}" alt=""> <span class="pl-5  text-xl text-black">Roshan Adhakari</span>
+        <br><br>
+        <h2  class="text-gray-500 ">"I have been using this service and i have got a very fruitful result."</h2>
+    </div>
+    <div class="three rev">
+        <img src="{{asset('images/pwn.png')}}" alt=""> <span class="pl-5  text-xl text-black">Charda Parsad Nigga</span>
+        <br><br>
+        <h2 class="text-gray-500 ">"I have been using this service and i have got a very fruitful result."</h2>
+    </div>
+
   </div>
 
 

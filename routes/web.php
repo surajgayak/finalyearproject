@@ -12,6 +12,10 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SeevehicleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\RentvehicleController;
+use App\Http\Controllers\GetrentController;
+
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +36,10 @@ Route::post('/bookings/{id}',[BookingController::class,'bookings'])->name('booki
 Route::post('/deletebooking/{id}',[BookingController::class,'deletebooking'])->name('deletebooking');
 Route::get('/seevehicle/{id}',[SeevehicleController::class,'seevehicle'])->name('seevehicle');
 Route::get('/chart',[ChartController::class,'barchart'])->name('barchart');
+Route::get('/rentvehicle',[RentvehicleController::class,'rentvehicle'])->name('rentvehicle');
+Route::post('/getrent',[GetrentController::class,'getrent'])->name('getrent');
+
+
 
 
 

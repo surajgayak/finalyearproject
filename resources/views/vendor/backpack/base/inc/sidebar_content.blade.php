@@ -9,7 +9,9 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('maintenance') }}"><i class="la la-tools nav-icon"></i> Maintenances</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('upcomming') }}"><i class="la la-calendar nav-icon"></i> Upcommings</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('enquiries') }}"><i class="la la-envelope nav-icon"></i> Enquiries</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('rental-request') }}"><i class="nav-icon la la-th-list"></i> Rental requests</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('upload') }}"><i class="la la-upload nav-icon"></i> Uploads</a></li>
+
 
 
 

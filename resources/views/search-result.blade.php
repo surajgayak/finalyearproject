@@ -14,6 +14,8 @@
 <div class="searchcontent pt-32 ">
   <h1 class="text-4xl font-bold text-center"> << <span>Searching</span> Results >> </h1>
   <br><br>
+
+
   <div class=" holy">
 @foreach ($results as $result)
         <div class="rounded-lg shadow-lg bg-white max-w-sm">
@@ -30,7 +32,9 @@
         </div>
 @endforeach
 </div>
-
+<a href="{{route('vehicle')}}">
+<button class="bg-blue-400 p-3 text-center text-white  ">See all Vehicles</button>
+</a>
 </div>
     <x-footer>
     </x-footer>
