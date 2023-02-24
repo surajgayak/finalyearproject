@@ -12,10 +12,13 @@ use Illuminate\Support\Facades\Auth;
 class VehicleController extends Controller
 {
     public function vehicle(){
+       
         $vehs=Vehicle::all();
         $upcomes=Upcomming::all();
         $bok = Booking::all();
         return view('vehicle', compact('upcomes', 'vehs','bok'));
         }
+
+       
 
  }

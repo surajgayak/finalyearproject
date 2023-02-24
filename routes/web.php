@@ -12,6 +12,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SeevehicleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\EsewaController;
 use App\Http\Controllers\RentvehicleController;
 use App\Http\Controllers\GetrentController;
 
@@ -38,6 +39,10 @@ Route::get('/seevehicle/{id}',[SeevehicleController::class,'seevehicle'])->name(
 Route::get('/chart',[ChartController::class,'barchart'])->name('barchart');
 Route::get('/rentvehicle',[RentvehicleController::class,'rentvehicle'])->name('rentvehicle');
 Route::post('/getrent',[GetrentController::class,'getrent'])->name('getrent');
+Route::post('/esewa/{id}',[EsewaController::class,'esewa'])->name('esewa');
+Route::get('/success',[EsewaController::class,'esewasuccess'])->name('esewasuccess');
+Route::get('/failure',[EsewaController::class,'esewafailure'])->name('esewafailure');
+
 
 
 

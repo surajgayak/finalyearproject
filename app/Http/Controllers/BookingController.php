@@ -27,7 +27,7 @@ class BookingController extends Controller
         $books->image=$veh->image;
         $books->status=$veh->id;
         $books->save();
-        return redirect()->route('booking')->with('status','Booking has been added !!!');;
+        return redirect()->route('booking')->with('status','Booking has been added !!!');
       
     }
     public function deletebooking($id){

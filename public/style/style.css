@@ -330,7 +330,20 @@
     font-weight: bold;
     padding: 5px;
 }
-
+/* ........... */
+.esewa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 50px;
+    background-color: #26ff43 !important;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
 /* ............................ABOUT US PAGE........................... */
 .about {
     width: 100%;
@@ -640,7 +653,7 @@ svg .polygon {
     width: 200px;
     height: 200px;
 }
-.booking .minibooking .book .confirmed input {
+.booking .minibooking .book .confirmed .cancel {
     width: 100px;
     height: 45px;
     background-color: blue;
@@ -648,6 +661,13 @@ svg .polygon {
     border-radius: 10px;
     margin-left: 20px;
     cursor: pointer;
+}
+.booking .minibooking .book .confirmed button {
+    width: 100px;
+    height: 45px;
+    color: black;
+    border-radius: 10px;
+    margin-left: 20px;
 }
 /* ...............................VEHICLEDESC PAGE................................ */
 
@@ -741,11 +761,16 @@ svg .polygon {
 
 /* ..........................DASHBOARD CONTENT......................... */
 .dashboardcontent {
+    padding: 15px;
     width: 100%;
     height: auto;
+    background-color: #f2f2f2;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
 }
 .dashboardcontent .charts {
     width: 100%;
+    background-color: #ededed;
     height: 500px;
     display: flex;
     justify-content: start;

@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     @vite('resources/css/app.css') 
     <link rel="stylesheet" href="/style/style.css">
         <title>Document</title>
         <script>
@@ -52,11 +53,21 @@
                     </div>
                     <br><br>
                     <div class="confirmed">
-                        <input type="submit" value="Cancel" class="bg-blue-400">
+                        <input type="submit" value="Cancel" class="bg-blue-400 cancel" title="Cancellation at peak point due 5% charge."><br><br>
+                        
+                             @if($boo->bok_status == 'verified')
+                            <button class="bg-green-700" disabled>Confirmed</button> 
+                            @else
+                            <button class="bg-yellow-400" disabled>Pending</button>
+                            @endif
+
                     </div>
+                   
                 </div>
+                
                 <br>
             </form>
+            
         @endforeach
     </div>
     <br>

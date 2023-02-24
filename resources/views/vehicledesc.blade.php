@@ -16,7 +16,7 @@
 
     <div class="contain">
       <h2 class="text-4xl text-center p-5 font-bold"><span>Vehicle Details</span></h2>
-    <form action="{{route('bookings',$veh->id)}}" method="post">
+    <form action="{{route('esewa',$veh->id)}}" method="post">
       @csrf
       <div class="car-info">
         <img src="{{asset('storage/' . $veh->image)}}" alt="Car Image">
@@ -58,7 +58,18 @@
           <input type="time" class="mt-2" name="time" required>
           <input type="text" placeholder="pickup Location" class="mt-2" name="location" required>
           <br>
+          <input value="100" name="tAmt" type="hidden">
+          <input value="90" name="amt" type="hidden">
+          <input value="5" name="txAmt" type="hidden">
+          <input value="2" name="psc" type="hidden">
+          <input value="3" name="pdc" type="hidden">
+          <input value="EPAYTEST" name="scd" type="hidden">
+          <input value="1234567890" name="pid" type="hidden">
+          <input value="http://esewa-test/esewa_payment_success?q=su" type="hidden" name="su">
+          <input value="http://esewa-test/esewa_payment_failed?q=fu" type="hidden" name="fu">
+          {{--  --}}
           <input type="submit" class="rent-btn" value="Confirmed">
+          {{--  --}}
         </div>
 
     

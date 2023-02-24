@@ -152,6 +152,18 @@
 
             </p>
         </div>
+
+        <div class="one rent">
+            <h1 class="text-center text-white ">Today Income</h1>
+                        <hr>
+                        <br>
+
+            <p class="text-center text-white">
+                Rs.{{DB::table('bookings')->where('bok_status', 'verified')->sum('amount');}}
+
+
+            </p>
+        </div>
     </div>
 
     <div class="charts ">
