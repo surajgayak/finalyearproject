@@ -28,7 +28,7 @@
         }
     @endif
 
-<h1 class='pt-36 text-center text-4xl font-bold'><< My<span> Bookings</span> >></h1>
+<h1 class='pt-32 text-center text-4xl font-bold'><< My<span> Bookings</span> >></h1>
 <div class="booking">
     <div class="minibooking">
         @foreach ($bookings as $boo)
@@ -56,9 +56,9 @@
                         <input type="submit" value="Cancel" class="bg-blue-400 cancel" title="Cancellation at peak point due 5% charge."><br><br>
                         
                              @if($boo->bok_status == 'verified')
-                            <button class="bg-green-700" disabled>Confirmed</button> 
+                            <button class="bg-green-500 text-white" title="Booking has been confirmed" disabled>Confirmed</button> 
                             @else
-                            <button class="bg-yellow-400" disabled>Pending</button>
+                            <button class="bg-yellow-400" title="Verify Transaction " disabled>Pending</button>
                             @endif
 
                     </div>

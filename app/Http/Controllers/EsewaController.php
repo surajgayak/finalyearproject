@@ -64,7 +64,7 @@ class EsewaController extends Controller
                 
                 if($update_status){
                      
-                        return view('booking')->with('status','Booking has been added !!!');
+                        return redirect()->route('booking')->with('status','Booking has been added !!!');
                 }
                 
 
@@ -73,7 +73,6 @@ class EsewaController extends Controller
                     
 
         public function esewafailure(){
-                $vehid=$_GET['oid'];
                 echo'Payment is failed';
         }
 }
