@@ -58,9 +58,8 @@ class Maintenance extends Model
         $attribute_name = "image";
         $disk = "public";
         $destination_path = "uploadimages";
-        $fileName = mt_rand(10000000,99999999). '.jpg';
+        $fileName = mt_rand(10000000, 99999999) . '.jpg';
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName);
     }
-
 }

@@ -17,7 +17,4 @@ class VehicledescController extends Controller
     $veh=Upload::find($id);
     return view('vehicledesc',compact('veh','bok'));
    }
-
-  
-  
 }

@@ -21,27 +21,28 @@ use App\Http\Controllers\GetrentController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/',[HomeController::class,'home'])->name('home');
-Route::get('/driversignup',[DriversignupController::class,'driversignup'])->name('driversignup');
-Route::post('/createdriver',[DriversignupController::class,'createdriver'])->name('createdriver');
-Route::get('/about',[AboutController::class,'about'])->name('about');
-Route::get('/vehicle',[VehicleController::class,'vehicle'])->name('vehicle');
-Route::get('/vehicledesc',[VehicledescController::class,'vehicledesc'])->name('vehicledesc');
-Route::post('/search',[SearchController::class,'search'])->name('search');
-Route::get('/service',[ServiceController::class,'service'])->name('service');
-Route::get('/booking',[BookingController::class,'booking'])->name('booking');
-Route::post('/vehicledescs/{id}',[VehicledescController::class,'vehicledescs'])->middleware('auth')->name('vehicledescs');
-Route::get('/contact',[ContactController::class,'contact'])->name('contact');
-Route::post('/enquirycontact',[ContactController::class,'enquirycontact'])->name('enquirycontact');
-Route::post('/bookings/{id}',[BookingController::class,'bookings'])->name('bookings');
-Route::post('/deletebooking/{id}',[BookingController::class,'deletebooking'])->name('deletebooking');
-Route::get('/seevehicle/{id}',[SeevehicleController::class,'seevehicle'])->name('seevehicle');
-Route::get('/chart',[ChartController::class,'barchart'])->name('barchart');
-Route::get('/rentvehicle',[RentvehicleController::class,'rentvehicle'])->name('rentvehicle');
-Route::post('/getrent',[GetrentController::class,'getrent'])->name('getrent');
-Route::post('/esewa/{id}',[EsewaController::class,'esewa'])->name('esewa');
-Route::get('/success',[EsewaController::class,'esewasuccess'])->name('esewasuccess');
-Route::get('/failure',[EsewaController::class,'esewafailure'])->name('esewafailure');
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/driversignup', [DriversignupController::class, 'driversignup'])->name('driversignup');
+Route::post('/createdriver', [DriversignupController::class, 'createdriver'])->name('createdriver');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/vehicle', [VehicleController::class, 'vehicle'])->name('vehicle');
+Route::get('/vehicledesc', [VehicledescController::class, 'vehicledesc'])->name('vehicledesc');
+Route::post('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/service', [ServiceController::class, 'service'])->name('service');
+Route::get('/booking', [BookingController::class, 'booking'])->name('booking');
+Route::post('/vehicledescs/{id}', [VehicledescController::class, 'vehicledescs'])->middleware('auth')->name('vehicledescs');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::post('/enquirycontact', [ContactController::class, 'enquirycontact'])->name('enquirycontact');
+Route::post('/bookings/{id}', [BookingController::class, 'bookings'])->name('bookings');
+Route::post('/deletebooking/{id}', [BookingController::class, 'deletebooking'])->name('deletebooking');
+Route::get('/seevehicle/{id}', [SeevehicleController::class, 'seevehicle'])->name('seevehicle');
+Route::get('/chart', [ChartController::class, 'barchart'])->name('barchart');
+Route::get('/rentvehicle', [RentvehicleController::class, 'rentvehicle'])->name('rentvehicle');
+Route::post('/getrent', [GetrentController::class, 'getrent'])->name('getrent');
+Route::post('/esewa/{id}', [EsewaController::class, 'esewa'])->name('esewa');
+Route::post('/esewaRe/{id}', [EsewaController::class, 'esewaRe'])->name('esewaRe');
+Route::get('/success', [EsewaController::class, 'esewasuccess'])->name('esewasuccess');
+Route::get('/failure', [EsewaController::class, 'esewafailure'])->name('esewafailure');
 
 
 
@@ -63,4 +64,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
