@@ -20,21 +20,7 @@ class BookingController extends Controller
 
         return view('booking', compact('bookings'));
     }
-    // public function bookings(Request $request ,$id){
-    //     $veh=Upload::find($id);
-    //     $books=new Booking;
-    //     $books->name=$veh->name;
-    //     $books->date=$request['date'];
-    //     $books->dropdate=$request['dropdate'];
-    //     $books->user_id=auth()->user()->id;
-    //     $books->time=$request['time'];
-    //     $books->location=$request['location'];
-    //     $books->image=$veh->image;
-    //     $books->status=$veh->id;
-    //     $books->save();
-    //     return redirect()->route('booking')->with('status','Booking has been added !!!');
 
-    // }
     public function deletebooking($id)
     {
         Booking::destroy($id);

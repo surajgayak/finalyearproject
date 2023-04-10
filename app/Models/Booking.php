@@ -35,14 +35,20 @@ class Booking extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-    public function vehicle() {
+    public function vehicle()
+    {
         return $this->belongsTo(Vehicle::class);
     }
 
-protected $dateFormat = 'Y-m-d';
+    public function driversignup()
+    {
+        return $this->belongsTo(Driversignup::class, 'booking_id');
+    }
+    protected $dateFormat = 'Y-m-d';
 
 
     /*

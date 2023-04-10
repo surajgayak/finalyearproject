@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,16 @@
     <link rel="stylesheet" href="style/style.css">
     <title>RentVehicle</title>
 </head>
+
 <body>
     {{-- FORM --}}
     <h1 class="text-2xl font-bold text-center pt-12">Give Vehicle To Rent</h1>
     <div class="block p-6 rounded-lg shadow-2xl content-center max-w-sm justify-center jesus m-auto">
-        <form action="{{route('getrent')}}" method="post" enctype="multipart/form-data">
-          @csrf
+        <form action="{{ route('getrent') }}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="form-group mb-6">
-              <input type="text" class="form-control
+                <input type="text"
+                    class="form-control
                 block
                 w-full
                 px-3
@@ -29,37 +32,99 @@
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="firstname" name="username"
-                aria-describedby="emailHelp123" placeholder="Your name" required>
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="firstname" name="username" aria-describedby="emailHelp123" placeholder="Your name" required>
             </div>
-        
-           
+
+
+
+
+            <div class="form-group mb-6">
+                <input type="email"
+                    class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="email" placeholder="Email address" name="email" required>
+            </div>
 
             {{--  --}}
-           
+            <div class="form-group mb-6">
+                <input type="number" value="{{ old('contact') }}"
+                    class="form-control 
+              block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="contact" min="0" name="contact" placeholder="Contact" required>
+                @error('contact')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+            </div>
+
+            <div class="form-group mb-6">
+                <input type="password"
+                    class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="password" placeholder="Car Name" name="carname" required>
+            </div>
+            <div class="form-group mb-6">
+                <input type="password"
+                    class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="model" placeholder="Model" name="model" required>
+            </div>
             {{--  --}}
-          
-          <div class="form-group mb-6">
-            <input type="email" class="form-control block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email"
-              placeholder="Email address" name="email" required>
-          </div>
-
-          {{--  --}}
-          <div class="form-group mb-6">
-            <input type="number" class="form-control
+            <div class="flex justify-center">
+                <div class="mb-3 w-96">
+                    <label for="file" class="form-label inline-block mb-2 text-gray-700">Upload Car Photo </label>
+                    <input
+                        class="form-control
               block
               w-full
               px-3
@@ -73,71 +138,17 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="contact" min="0"   name="contact"
-             placeholder="Contact" required>
-          </div>
-
-          <div class="form-group mb-6">
-            <input type="password" class="form-control block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="password"
-              placeholder="Car Name" name="carname" required>
-          </div>
-          <div class="form-group mb-6">
-            <input type="password" class="form-control block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="model"
-              placeholder="Model" name="model" required>
-          </div>
-          {{--  --}}
-          <div class="flex justify-center">
-            <div class="mb-3 w-96">
-              <label for="file" class="form-label inline-block mb-2 text-gray-700">Upload Car Photo </label>
-              <input class="form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="file" name="carphoto" required>
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        type="file" id="file" name="carphoto" required>
+                </div>
             </div>
-          </div>
 
-          {{--  --}}
-          <div class="flex justify-center">
-            <div class="mb-3 w-96">
-              <label for="licence" class="form-label inline-block mb-2 text-gray-700">Upload Bluebook</label>
-              <input class="form-control
+            {{--  --}}
+            <div class="flex justify-center">
+                <div class="mb-3 w-96">
+                    <label for="licence" class="form-label inline-block mb-2 text-gray-700">Upload Bluebook</label>
+                    <input
+                        class="form-control
               block
               w-full
               px-3
@@ -151,14 +162,16 @@
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="bluebook" name="bluebookphoto" required>
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        type="file" id="bluebook" name="bluebookphoto" required>
+                </div>
             </div>
-          </div>
-          {{--  --}}
-         
-          <br>
-          {{--  --}}
-          <button type="submit" class="
+            {{--  --}}
+
+            <br>
+            {{--  --}}
+            <button type="submit"
+                class="
             w-full
             px-6
             py-2.5
@@ -175,11 +188,13 @@
             active:bg-blue-800 active:shadow-lg
             transition
             duration-150
-            ease-in-out">Sign up
-        </button>
+            ease-in-out">Sign
+                up
+            </button>
 
-        
+
         </form>
-      </div>
+    </div>
 </body>
+
 </html>

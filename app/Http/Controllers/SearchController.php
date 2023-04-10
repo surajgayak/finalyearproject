@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Booking;
+use App\Models\Upload;
+
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -12,17 +15,8 @@ class SearchController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
 
-        $query = Booking::query();
-        if($pickup)
-            $query->where('location', 'like', '%'.$pickup.'%');
-        elseif($date)
-            $query->where('date', 'like', '%'.$date.'%');
-        elseif($time)
-        $query->where('time', 'like', '%'.$time.'%');    
-        $results = $query->get();
+        $results = Upload::all()->take(3)->reverse();
 
-   
-        return view('search-result', compact('results'));
+        return view('search-result', ['results' => $results]);
     }
-       
 }

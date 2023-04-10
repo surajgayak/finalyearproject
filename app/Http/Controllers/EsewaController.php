@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Upload;
 use Carbon\Carbon;
+use App\Mail\BookingConfirmation;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 // init composer autoloader.
@@ -16,10 +18,9 @@ use Cixware\Esewa\Config;
 class EsewaController extends Controller
 {
 
-
         public function esewa(Request $request, $id)
         {
-                $request->validate();
+                $booking = new Booking;
                 $pid = uniqid();
 
                 $veh = Upload::find($id);
@@ -54,6 +55,8 @@ class EsewaController extends Controller
                 $config = new Config($successUrl, $failureUrl);
                 $esewa = new Client($config);
                 $esewa->process($pid, $books->amount, 0, 0, 0);
+
+                Mail::to(auth()->user()->email)->send(new BookingConfirmation($booking));
 
                 // return redirect()->route('booking')->with('status','Booking has been added !!!');
 

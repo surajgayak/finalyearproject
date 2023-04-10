@@ -32,12 +32,12 @@
                     <p>Model : {{ ucfirst($veh->model) }}</p>
 
 
-                    @php
+                    {{-- @php
                         $user_id = Auth::id();
-                        $min_pickup_date = \Carbon\Carbon::tomorrow()->format('Y-m-d'); // set default minimum pickup date to tomorrow
+                        $min_pickup_date = \Carbon\Carbon::tomorrow()->format('Y-m-d'); 
                         $max_pickup_date = \Carbon\Carbon::now()
-                            ->addDays(14)
-                            ->format('Y-m-d'); // set default max pickup date to tomorrow
+                            ->addDays(20)
+                            ->format('Y-m-d');
                     @endphp
 
                     @foreach ($bok as $boks)
@@ -46,33 +46,62 @@
                     @error('date')
                     @enderror
 
-                    @endif
+                
                     Pickup Date
-                    <input type="date" class="mt-3" name="date" min="{{ $min_pickup_date }}"
-                        value="{{ $min_pickup_date }}" max="{{ $max_pickup_date }}" required>
+                    <input type="date" class="mt-3" name="date" min="{{ $min_pickup_date }}" required>
                     <br>
                     Drop Date
-                    <input type="date" class="mt-3" name="dropdate" min="{{ $min_pickup_date }}"
-                        value="{{ $max_pickup_date }}" max="{{ $max_pickup_date }}" required>
+                    <input type="date" class="mt-3" name="dropdate" min="{{ $min_pickup_date }}" required>
 
+                    <br> --}}
 
+                    @php
+                        $user_id = Auth::id();
+                        $min_pickup_date = \Carbon\Carbon::tomorrow()->format('Y-m-d'); // set default minimum pickup date to tomorrow
+                        $max_pickup_date = \Carbon\Carbon::now()
+                            ->addDays(20)
+                            ->format('Y-m-d'); // set default max pickup date to tomorrow
+                        $latest_drop_date = null;
+                        
+                        // Check if there is already a booking made for the car
+                        if ($bok->isNotEmpty()) {
+                            $latest_booking = $bok
+                                ->sortByDesc('dropdate')
+                        
+                                ->first();
+                        
+                            $latest_drop_date = $latest_booking->dropdate;
+                            $min_pickup_date = \Carbon\Carbon::parse($latest_drop_date)
+                                ->addDay()
+                                ->format('Y-m-d');
+                        }
+                    @endphp
 
-                    {{-- @php
-          $user_id = Auth::id(); // get the ID of the currently logged-in user
-          $books_for_user = $bok->where('user_id', $user_id); // filter the $bok collection to find books for the current user
-        @endphp
-         --}}
-                    {{-- @if ($books_for_user->count() > 0)
-          @foreach ($books_for_user as $book)
+                    @foreach ($bok as $boks)
+                        {{-- // Display existing bookings --}}
+                    @endforeach
 
-          @endforeach
-        @else
-        
-        @endif --}}
+                    @error('date')
+                        {{-- // Display error message --}}
+                    @enderror
 
-
-
+                    {{-- // Display pickup date input field --}}
+                    Pickup Date
+                    <input type="date" class="mt-3" name="date" min="{{ $min_pickup_date }}" required>
                     <br>
+
+                    {{-- // Set the minimum drop date to be the pickup date selected by the user --}}
+                    @if ($latest_drop_date)
+                        <input type="hidden" name="mindropdate"
+                            value="{{ \Carbon\Carbon::parse($min_pickup_date)->format('Y-m-d') }}">
+                    @else
+                        <input type="hidden" name="mindropdate" value="{{ $min_pickup_date }}">
+                    @endif
+
+                    {{-- // Display drop date input field --}}
+                    Drop Date
+                    <input type="date" class="mt-3" name="dropdate" min="{{ $min_pickup_date }}" required>
+
 
                     <input type="time" class="mt-2" name="time" required>
                     <input type="text" placeholder="pickup Location" class="mt-2" name="location" required>

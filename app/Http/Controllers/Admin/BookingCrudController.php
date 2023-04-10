@@ -30,7 +30,7 @@ class BookingCrudController extends CrudController
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/booking');
         $this->crud->setEntityNameStrings('booking', 'bookings');
     }
-    
+
     /**
      * Define what happens when the List operation is loaded.
      * 
@@ -39,27 +39,43 @@ class BookingCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-         $this->crud->column('id');
-         $this->crud->column('name');
-         $this->crud->column('user');
-         $this->crud->column('user_email');
-       $this->crud->column('date');
-       $this->crud->column('dropdate');
-       $this->crud->column('time');
-       $this->crud->column('location');
-       $this->crud->column('status');
+        $this->crud->column('id');
+        $this->crud->column('name');
+        $this->crud->column('user');
+        $this->crud->column('user_email');
+        $this->crud->column('date');
+        $this->crud->column('dropdate');
+        $this->crud->column('time');
+        $this->crud->column('location');
+        $this->crud->column('status');
+        // $this->crud->addColumn([
+        //     'name' => 'fullname',
+        //     'label' => 'Select_driver',
+        //     'type' => 'select',
+        //     'attribute' => 'fullname',
+        //     'entity' => 'driversignup',
+        //     'model' => "App\Models\Driversignup",
+        // ]);
+        $this->crud->addColumn([
+            'name' => 'fullname',
+            'label' => 'Driver Name',
+            'type' => 'select',
+            'attribute' => 'fullname',
+            'entity' => 'driversignup',
+            'model' => "App\Models\Driversignup"
+        ]);
 
-       $this->crud->addColumn([
-        'name'      => 'image', // The db column name
-        'label'     => 'Image', // Table column heading
-        'type'      => 'image',
-        'prefix' => 'storage/',
-        // image from a different disk (like s3 bucket)
-        // 'disk'   => 'disk-name', 
-        // optional width/height if 25px is not ok with you
-        'height' => '100px',
-        'width'  => '100px',
-    ]);
+        $this->crud->addColumn([
+            'name'      => 'image', // The db column name
+            'label'     => 'Image', // Table column heading
+            'type'      => 'image',
+            'prefix' => 'storage/',
+            // image from a different disk (like s3 bucket)
+            // 'disk'   => 'disk-name', 
+            // optional width/height if 25px is not ok with you
+            'height' => '100px',
+            'width'  => '100px',
+        ]);
 
 
 
@@ -76,18 +92,21 @@ class BookingCrudController extends CrudController
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
+
+
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(BookingRequest::class);
+        $this->crud->setValidation(BookingRequest::class);
 
         $this->crud->addField([
             'name' => 'name'
         ]);
 
+
         $this->crud->addField([
             'name' => 'date'
         ]);
-        
+
         $this->crud->addField([
             'name' => 'time'
         ]);
@@ -96,14 +115,19 @@ class BookingCrudController extends CrudController
             'name' => 'location'
         ]);
 
+
         $this->crud->addField([
             'name' => 'user_id'
         ]);
+
 
         $this->crud->addField([
             'name' => 'image',
             'type' => 'upload'
         ]);
+
+
+
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
