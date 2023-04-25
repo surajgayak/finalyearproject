@@ -186,7 +186,7 @@
 
 .carasoul {
     width: 100%;
-    height: 200px;
+    height: auto;
     background-color: #fff;
     display: flex;
     flex-wrap: wrap;
@@ -773,6 +773,7 @@ svg .polygon {
     background-color: #ededed;
     height: 500px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: start;
     gap: 20px;
 }
@@ -1096,11 +1097,9 @@ svg .polygon {
         height: auto;
     }
     .carasoul {
-        width: 100%;
-        height: auto;
+        display: none;
     }
-    .carasoul .imag {
-        width: 100px;
-        height: 20px;
+    .driver {
+        margin-top: 100px;
     }
 }

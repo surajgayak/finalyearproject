@@ -14,7 +14,8 @@
 
 <body>
 
-
+    @foreach ($vehicle as $veh)
+    @endforeach
 
     <div class="contain">
         <h2 class="text-4xl text-center p-5 font-bold"><span>Vehicle Details</span></h2>
@@ -31,13 +32,11 @@
                     <p>Fuel : {{ ucfirst($veh->engine) }}</p>
                     <p>Model : {{ ucfirst($veh->model) }}</p>
 
-
-
                     @php
                         $user_id = Auth::id();
                         $min_pickup_date = \Carbon\Carbon::tomorrow()->format('Y-m-d'); // set default minimum pickup date to tomorrow
                         $max_pickup_date = \Carbon\Carbon::now()
-                            ->addDays(29)
+                            ->addDays(20)
                             ->format('Y-m-d'); // set default max pickup date to tomorrow
                         $latest_drop_date = null;
                         

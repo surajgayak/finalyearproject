@@ -2,16 +2,16 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-24">
-           
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{route('home')}}">
-                        <img src="/images/logorental.png" style="width:200px;height:80px">
-                    </a>
-                </div>
 
-                <!-- Navigation Links -->
-                <div class="flex justify-between">
+            <!-- Logo -->
+            <div class="shrink-0 flex items-center">
+                <a href="{{ route('home') }}">
+                    <img src="/images/logorental.png" style="width:200px;height:80px">
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex justify-between">
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
@@ -20,59 +20,63 @@
 
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                    {{ __('About') }}
-                </x-nav-link>
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __('About') }}
+                    </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('vehicle')" :active="request()->routeIs('vehicle')">
                         {{ __('Vehicles') }}
                     </x-nav-link>
-                    </div>
+                </div>
 
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('service')" :active="request()->routeIs('service')">
-                            {{ __('Services') }}
-                        </x-nav-link>
-                        </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('booking')" :active="request()->routeIs('booking')" >
-                                {{ __('Booking') }}
-                            </x-nav-link>
-                            </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
-                                {{ __('Contact') }}
-                            </x-nav-link>
-                            </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('service')" :active="request()->routeIs('service')">
+                        {{ __('Services') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('booking')" :active="request()->routeIs('booking')">
+                        {{ __('Booking') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                        {{ __('Contact') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
             @auth
                 <form class="mt-5" action="{{ route('logout') }}" method="post">
-                @csrf
-                <button type="submit" class="bg-red-600 px-5 py-3 text-white rounded">Logout</button>
+                    @csrf
+                    <button type="submit" class="bg-red-600 px-5 py-3 text-white rounded">Logout</button>
                 </form>
             @endauth
-            @guest    
-            <div class="hidden sm:flex sm:items-center sm:ml-6 ">
-                <a href="{{route('login')}}">
-                <button class="bg-blue-600 px-5 py-3 text-white rounded">Login</button>
-                </a>
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <a href="{{route('register')}}">
-                <button>Register</button>
-                </a>
-             </div>
+            @guest
+                <div class="hidden sm:flex sm:items-center sm:ml-6 ">
+                    <a href="{{ route('login') }}">
+                        <button class="bg-blue-600 px-5 py-3 text-white rounded">Login</button>
+                    </a>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="{{ route('register') }}">
+                        <button>Register</button>
+                    </a>
+                </div>
             @endguest
 
             <!-- Hamburger -->
             <div class=" flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                <button @click="open = ! open"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -80,7 +84,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
@@ -102,14 +106,14 @@
             </x-responsive-nav-link>
 
             <div class="mx-2 sm:flex sm:items-center sm:ml-6 ">
-                <a href="{{route('login')}}">
-                <button class="bg-blue-600 px-5 py-3 text-white rounded">Login</button>
+                <a href="{{ route('login') }}">
+                    <button class="bg-blue-600 px-5 py-3 text-white rounded">Login</button>
                 </a>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <a href="{{route('register')}}">
-                <button>Register</button>
+                <a href="{{ route('register') }}">
+                    <button>Register</button>
                 </a>
-             </div>
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->

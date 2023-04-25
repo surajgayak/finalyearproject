@@ -172,22 +172,22 @@
 
         <div class="review">
             <div class="one rev">
-                <img src="{{ asset('images/utm.png') }}" alt=""> <span class="pl-5  text-xl text-black">Ramesh
+                <img src="{{ asset('images/pwn.png') }}" alt=""> <span class="pl-5  text-xl text-black">Roshan
                     Shrestha</span>
                 <br><br>
-                <h2 class="text-gray-500 ">"I have been using this service and i have got a very fruitful result."</h2>
+                <h2 class="text-gray-500 ">"I have the best experience in this service ."</h2>
 
 
             </div>
             <div class="two rev">
-                <img src="{{ asset('images/sur.png') }}" alt=""> <span class="pl-5  text-xl text-black">Roshan
+                <img src="{{ asset('images/utm.png') }}" alt=""> <span class="pl-5  text-xl text-black">Suman
                     Adhakari</span>
                 <br><br>
-                <h2 class="text-gray-500 ">"I have been using this service and i have got a very fruitful result."</h2>
+                <h2 class="text-gray-500 ">"It seems to be very fruitful for me to use this service ."</h2>
             </div>
             <div class="three rev">
-                <img src="{{ asset('images/pwn.png') }}" alt=""> <span
-                    class="pl-5  text-xl text-black">Charda Parsad Nigga</span>
+                <img src="{{ asset('images/sur.png') }}" alt=""> <span
+                    class="pl-5  text-xl text-black">Charda Parsad </span>
                 <br><br>
                 <h2 class="text-gray-500 ">"I have been using this service and i have got a very fruitful result."</h2>
             </div>

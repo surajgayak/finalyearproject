@@ -15,6 +15,8 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\EsewaController;
 use App\Http\Controllers\RentvehicleController;
 use App\Http\Controllers\GetrentController;
+use App\Http\Controllers\EdittransController;
+
 
 
 
@@ -27,6 +29,8 @@ Route::post('/createdriver', [DriversignupController::class, 'createdriver'])->n
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/vehicle', [VehicleController::class, 'vehicle'])->name('vehicle');
 Route::get('/vehicledesc', [VehicledescController::class, 'vehicledesc'])->name('vehicledesc');
+Route::post('/vehicledesc/{id}', [VehicledescController::class, 'vehicledesc'])->name('vehicledesc');
+
 Route::post('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/service', [ServiceController::class, 'service'])->name('service');
 Route::get('/booking', [BookingController::class, 'booking'])->name('booking');
@@ -39,6 +43,8 @@ Route::get('/seevehicle/{id}', [SeevehicleController::class, 'seevehicle'])->nam
 Route::get('/chart', [ChartController::class, 'barchart'])->name('barchart');
 Route::get('/rentvehicle', [RentvehicleController::class, 'rentvehicle'])->name('rentvehicle');
 Route::post('/getrent', [GetrentController::class, 'getrent'])->name('getrent');
+Route::post('/edittrans/{id}', [EdittransController::class, 'edittrans'])->name('edittrans');
+
 Route::post('/esewa/{id}', [EsewaController::class, 'esewa'])->name('esewa');
 Route::post('/esewaRe/{id}', [EsewaController::class, 'esewaRe'])->name('esewaRe');
 Route::get('/success', [EsewaController::class, 'esewasuccess'])->name('esewasuccess');
