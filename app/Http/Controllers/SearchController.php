@@ -15,7 +15,23 @@ class SearchController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
 
-        $results = Upload::all()->take(3)->reverse();
+        $totalVehicles = Upload::count(); // Get the total number of vehicles
+
+        $minRecords = 0; // Minimum number of records to retrieve
+        $maxRecords = $totalVehicles; // Maximum number of records to retrieve (same as total vehicles)
+
+        $randomNumber = rand($minRecords, $maxRecords);
+
+        if ($randomNumber == 0) {
+            // No vehicles available
+            $results = [];
+            $message = "No vehicles available.";
+        } else {
+            $results = Upload::inRandomOrder()->take($randomNumber)->get();
+            $message = "";
+        }
+
+
 
         return view('search-result', ['results' => $results]);
     }

@@ -15,22 +15,20 @@ class DriversignupController extends Controller
 
     public function createdriver(Request $request)
     {
-
         $request->validate([
-            'username' => 'required|regex:/^[a-zA-Z\s]+$/',
-            'contact' => 'required|digits:10',
-            'image' => 'required|image|mimes:jpeg,png,jpg',
+            'contact' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:driversignup',
+            'photo' => 'required|image|max:4096',
         ]);
-
 
         $driversignup = new Driversignup;
         $driversignup->fullname = $request['fullname'];
         $driversignup->contact = $request['contact'];
         $driversignup->email = $request['email'];
-        $driversignup->password = $request['password'];
+        $driversignup->password = bcrypt($request['password']);
         $driversignup->image = $request->file('photo')->store('uploadimages', 'public');
         $driversignup->licence = $request->file('licence')->store('uploadimages', 'public');
         $driversignup->save();
-        return redirect()->route('home')->with('status', 'your mail has been received.You will be notified after vefification.');
+        return redirect()->route('home')->with('status', 'your request has been received.email will be sent after vefification.');
     }
 }
